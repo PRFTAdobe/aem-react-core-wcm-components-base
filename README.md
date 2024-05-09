@@ -1,4 +1,4 @@
-# AEM WCM Components - React Core implementation
+# AEM WCM Components - React Core Implementation
 
 This module provides a React implementation for the [AEM core components](https://www.aemcomponents.dev/).
 This enables you to use the core components:
