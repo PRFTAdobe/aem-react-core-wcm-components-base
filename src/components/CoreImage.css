@@ -1,0 +1,15 @@
+:root {
+  --asset-max-inline-size: none;
+}
+
+.cmp-image .cmp-image__image {
+  inline-size: auto;
+}
+
+.cmp-image .cmp-asset {
+  block-size: auto;
+  display: block;
+  inline-size: 100%;
+  max-inline-size: var(--asset-max-inline-size);
+  object-fit: cover;
+}

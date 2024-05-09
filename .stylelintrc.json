@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended"
+  ],
+  "plugins": [
+    "stylelint-use-logical",
+    "stylelint-order"
+  ],
+  "rules": {
+    "selector-class-pattern": null,
+    "order/order": [
+      "custom-properties",
+      "declarations"
+    ],
+    "order/properties-alphabetical-order": true,
+    "csstools/use-logical": "always"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.css"
+      ],
+      "customSyntax": "postcss-html"
+    }
+  ]
+}

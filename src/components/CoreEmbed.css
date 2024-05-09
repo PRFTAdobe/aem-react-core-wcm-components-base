@@ -1,0 +1,12 @@
+.cmp-embed__embeddable-wrapper {
+  position: relative;
+}
+
+.cmp-embed__embeddable-wrapper > iframe {
+  inset: 0;
+  position: absolute;
+}
+
+.twitter-tweet iframe {
+  max-inline-size: 100%;
+}

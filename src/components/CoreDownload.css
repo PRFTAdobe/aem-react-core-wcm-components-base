@@ -1,0 +1,54 @@
+.cmp-download {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  display: inline-block;
+  overflow: hidden;
+  padding-block: 16px;
+  padding-inline: 16px;
+  position: relative;
+}
+
+.cmp-download__title {
+  margin-block: 0 8px;
+  margin-inline: 0 0;
+}
+
+.cmp-download__title-link {
+  text-decoration: none;
+}
+
+.cmp-download__description {
+  margin-block: 0 16px;
+  margin-inline: 0 0;
+}
+
+.cmp-download__description p {
+  margin-block: 0;
+  margin-inline: 0;
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+.cmp-download__properties {
+  margin-block: 0 16px;
+  margin-inline: 0 0;
+}
+
+.cmp-download__property {
+  background-color: #eee;
+  border-radius: 4px;
+  color: #000;
+  display: inline-block;
+  margin-inline-end: 4px;
+  padding-block: 4px;
+  padding-inline: 8px;
+}
+
+.cmp-download__property-label {
+  display: none;
+}
+
+.cmp-download__property-content {
+  margin-block: 0;
+  margin-inline: 0;
+}
