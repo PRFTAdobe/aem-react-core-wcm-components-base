@@ -1921,7 +1921,7 @@ const ct = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, ut
   }
 ) });
 export {
-  rr as BreadcrumbEditConfig,
+  rr as BreadCrumbEditConfig,
   ar as ButtonEditConfig,
   Gn as CoreBreadCrumb,
   et as CoreButton,

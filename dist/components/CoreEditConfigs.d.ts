@@ -10,7 +10,7 @@ import { TeaserProps } from './CoreTeaser';
 interface BreadcrumbComponentProperties extends MappedComponentProperties {
     items: BreadCrumbItem[];
 }
-export declare const BreadcrumbEditConfig: EditConfig<BreadcrumbComponentProperties>;
+export declare const BreadCrumbEditConfig: EditConfig<BreadcrumbComponentProperties>;
 interface ButtonComponentProperties extends MappedComponentProperties {
     text: string;
 }

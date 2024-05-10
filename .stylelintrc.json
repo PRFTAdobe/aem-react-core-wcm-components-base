@@ -15,13 +15,5 @@
     ],
     "order/properties-alphabetical-order": true,
     "csstools/use-logical": "always"
-  },
-  "overrides": [
-    {
-      "files": [
-        "**/*.css"
-      ],
-      "customSyntax": "postcss-html"
-    }
-  ]
+  }
 }

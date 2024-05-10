@@ -35,7 +35,7 @@ interface BreadcrumbComponentProperties extends MappedComponentProperties {
   items: BreadCrumbItem[];
 }
 
-export const BreadcrumbEditConfig: EditConfig<BreadcrumbComponentProperties> = {
+export const BreadCrumbEditConfig: EditConfig<BreadcrumbComponentProperties> = {
   emptyLabel: 'Breadcrumb',
   isEmpty(props: { items: BreadCrumbItem[] }) {
     return BreadCrumbIsEmpty(props);
