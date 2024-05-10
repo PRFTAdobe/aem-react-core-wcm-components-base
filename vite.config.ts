@@ -8,43 +8,47 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/main.ts'),
-      name: 'aemReactCoreWcmComponentsBase',
       fileName: (format) => `aem-react-core-wcm-components-base.${format}.js`,
+      name: 'aemReactCoreWcmComponentsBase',
     },
     rollupOptions: {
       external: [
-        'react',
-        'react-dom',
-        'react-router-dom',
         '@adobe/aem-spa-page-model-manager',
         '@adobe/aem-spa-component-mapping',
         '@adobe/aem-react-editable-components',
+        'dompurify',
+        'html-react-parser',
+        'react',
+        'react-dom',
+        'react-router-dom',
       ],
       output: {
+        assetFileNames: 'aem-react-core-wcm-components-base.[ext]',
         // Provide global variables to use in the UMD build
         // Add external deps here
         globals: {
+          '@adobe/aem-react-editable-components': 'AemReactEditableComponents',
+          '@adobe/aem-spa-component-mapping': 'AemSpaComponentMapping',
+          '@adobe/aem-spa-page-model-manager': 'AemSpaPageModelManager',
+          dompurify: 'DOMPurify',
+          'html-react-parser': 'HtmlReactParser',
           react: 'React',
           'react-dom': 'ReactDom',
           'react-router-dom': 'ReactRouter',
-          '@adobe/aem-spa-page-model-manager': 'AemSpaPageModelManager',
-          '@adobe/aem-spa-component-mapping': 'AemSpaComponentMapping',
-          '@adobe/aem-react-editable-components': 'AemReactEditableComponents',
         },
-        assetFileNames: 'aem-react-core-wcm-components-base.[ext]',
       },
-    },
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
     },
   },
   plugins: [
     react(),
     dts({
-      insertTypesEntry: true,
       exclude: '**/__tests__/**',
+      insertTypesEntry: true,
     }),
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
 });
