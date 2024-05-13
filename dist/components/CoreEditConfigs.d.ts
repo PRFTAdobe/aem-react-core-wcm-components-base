@@ -11,37 +11,36 @@ import { TeaserProps } from './CoreTeaser';
 import { TitleProps } from './CoreTitle';
 import { TextProps } from './CoreText';
 
-interface BreadcrumbComponentProperties extends BreadCrumbProps, MappedComponentProperties {
+export interface BreadcrumbComponentProperties extends BreadCrumbProps, MappedComponentProperties {
 }
 export declare const BreadCrumbEditConfig: EditConfig<BreadcrumbComponentProperties>;
-interface ButtonComponentProperties extends ButtonProps, MappedComponentProperties {
+export interface ButtonComponentProperties extends ButtonProps, MappedComponentProperties {
 }
 export declare const ButtonEditConfig: EditConfig<ButtonComponentProperties>;
-interface DownloadComponentProperties extends DownloadProps, MappedComponentProperties {
+export interface DownloadComponentProperties extends DownloadProps, MappedComponentProperties {
 }
 export declare const DownloadEditConfig: EditConfig<DownloadComponentProperties>;
-interface EmbedComponentProperties extends EmbedProps, MappedComponentProperties {
+export interface EmbedComponentProperties extends EmbedProps, MappedComponentProperties {
 }
 export declare const EmbedEditConfig: EditConfig<EmbedComponentProperties>;
-interface ImageComponentProperties extends ImageProps, MappedComponentProperties {
+export interface ImageComponentProperties extends ImageProps, MappedComponentProperties {
 }
 export declare const ImageEditConfig: EditConfig<ImageComponentProperties>;
-interface LanguageNavigationComponentProperties extends LanguageNavigationProps, MappedComponentProperties {
+export interface LanguageNavigationComponentProperties extends LanguageNavigationProps, MappedComponentProperties {
 }
 export declare const LanguageNavigationEditConfig: EditConfig<LanguageNavigationComponentProperties>;
-interface ListComponentProperties extends ListProps, MappedComponentProperties {
+export interface ListComponentProperties extends ListProps, MappedComponentProperties {
 }
 export declare const ListEditConfig: EditConfig<ListComponentProperties>;
-interface NavigationComponentProperties extends NavigationProps, MappedComponentProperties {
+export interface NavigationComponentProperties extends NavigationProps, MappedComponentProperties {
 }
 export declare const NavigationEditConfig: EditConfig<NavigationComponentProperties>;
-interface TeaserComponentProperties extends TeaserProps, MappedComponentProperties {
+export interface TeaserComponentProperties extends TeaserProps, MappedComponentProperties {
 }
 export declare const TeaserEditConfig: EditConfig<TeaserComponentProperties>;
-interface TitleComponentProperties extends TitleProps, MappedComponentProperties {
+export interface TitleComponentProperties extends TitleProps, MappedComponentProperties {
 }
 export declare const TitleEditConfig: EditConfig<TitleComponentProperties>;
-interface TextComponentProperties extends TextProps, MappedComponentProperties {
+export interface TextComponentProperties extends TextProps, MappedComponentProperties {
 }
 export declare const TextEditConfig: EditConfig<TextComponentProperties>;
-export {};
