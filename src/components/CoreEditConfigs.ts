@@ -3,61 +3,54 @@ import {
   MappedComponentProperties,
 } from '@adobe/aem-react-editable-components';
 import {
-  BreadCrumbItem,
+  BreadCrumbProps,
   isEmpty as BreadCrumbIsEmpty,
 } from '@/components/CoreBreadCrumb';
 import { ButtonProps, isEmpty as ButtonIsEmpty } from '@/components/CoreButton';
-import { isEmpty as DownloadIsEmpty } from '@/components/CoreDownload';
-import React from 'react';
 import {
-  isEmpty as EmbedIsEmpty,
-  OEmbedResponse,
-  YouTubeProps,
-} from '@/components/CoreEmbed';
-import { isEmpty as ImageIsEmpty } from '@/components/CoreImage';
+  DownloadProps,
+  isEmpty as DownloadIsEmpty,
+} from '@/components/CoreDownload';
+import { EmbedProps, isEmpty as EmbedIsEmpty } from '@/components/CoreEmbed';
+import { ImageProps, isEmpty as ImageIsEmpty } from '@/components/CoreImage';
 import {
   isEmpty as LanguageNavigationIsEmpty,
-  LanguageNavigationItem,
+  LanguageNavigationProps,
 } from '@/components/CoreLanguageNavigation';
-import {
-  isEmpty as ListItemIsEmpty,
-  ListItemProps,
-} from '@/components/CoreList';
+import { isEmpty as ListItemIsEmpty, ListProps } from '@/components/CoreList';
 import {
   isEmpty as NavigationIsEmpty,
-  NavigationItem,
+  NavigationProps,
 } from '@/components/CoreNavigation';
 import { isEmpty as TeaserIsEmpty, TeaserProps } from '@/components/CoreTeaser';
-import { isEmpty as TitleIsEmpty } from '@/components/CoreTitle';
-import { isEmpty as TextIsEmpty } from '@/components/CoreText';
+import { isEmpty as TitleIsEmpty, TitleProps } from '@/components/CoreTitle';
+import { isEmpty as TextIsEmpty, TextProps } from '@/components/CoreText';
 
-interface BreadcrumbComponentProperties extends MappedComponentProperties {
-  items: BreadCrumbItem[];
-}
+interface BreadcrumbComponentProperties
+  extends BreadCrumbProps,
+    MappedComponentProperties {}
 
 export const BreadCrumbEditConfig: EditConfig<BreadcrumbComponentProperties> = {
   emptyLabel: 'Breadcrumb',
-  isEmpty(props: { items: BreadCrumbItem[] }) {
+  isEmpty(props: BreadcrumbComponentProperties) {
     return BreadCrumbIsEmpty(props);
   },
 };
 
-interface ButtonComponentProperties extends MappedComponentProperties {
-  text: string;
-}
+interface ButtonComponentProperties
+  extends ButtonProps,
+    MappedComponentProperties {}
 
 export const ButtonEditConfig: EditConfig<ButtonComponentProperties> = {
   emptyLabel: 'Button',
-  isEmpty(props: ButtonProps) {
+  isEmpty(props: ButtonComponentProperties) {
     return ButtonIsEmpty(props.text);
   },
 };
 
-interface DownloadComponentProperties extends MappedComponentProperties {
-  url?: string;
-
-  handleOnClick?(event: React.MouseEvent): void;
-}
+interface DownloadComponentProperties
+  extends DownloadProps,
+    MappedComponentProperties {}
 
 export const DownloadEditConfig: EditConfig<DownloadComponentProperties> = {
   emptyLabel: 'Download',
@@ -71,13 +64,9 @@ export const DownloadEditConfig: EditConfig<DownloadComponentProperties> = {
   },
 };
 
-interface EmbedComponentProperties extends MappedComponentProperties {
-  result?: OEmbedResponse;
-  html?: string;
-  youTubeProps?: YouTubeProps;
-  type: 'URL' | 'HTML' | 'EMBEDDABLE';
-  url?: string;
-}
+interface EmbedComponentProperties
+  extends EmbedProps,
+    MappedComponentProperties {}
 
 export const EmbedEditConfig: EditConfig<EmbedComponentProperties> = {
   emptyLabel: 'Embed',
@@ -86,33 +75,32 @@ export const EmbedEditConfig: EditConfig<EmbedComponentProperties> = {
   },
 };
 
-interface ImageComponentProperties extends MappedComponentProperties {
-  src: string;
-}
+interface ImageComponentProperties
+  extends ImageProps,
+    MappedComponentProperties {}
 
 export const ImageEditConfig: EditConfig<ImageComponentProperties> = {
   emptyLabel: 'Image',
-  isEmpty({ src }: { src: string }) {
+  isEmpty({ src }: ImageComponentProperties) {
     return ImageIsEmpty(src);
   },
 };
 
 interface LanguageNavigationComponentProperties
-  extends MappedComponentProperties {
-  items?: LanguageNavigationItem[];
-}
+  extends LanguageNavigationProps,
+    MappedComponentProperties {}
 
 export const LanguageNavigationEditConfig: EditConfig<LanguageNavigationComponentProperties> =
   {
     emptyLabel: 'Language Navigation',
-    isEmpty(props: { items?: LanguageNavigationItem[] }) {
+    isEmpty(props: LanguageNavigationComponentProperties) {
       return LanguageNavigationIsEmpty(props);
     },
   };
 
-interface ListComponentProperties extends MappedComponentProperties {
-  items: ListItemProps[];
-}
+interface ListComponentProperties
+  extends ListProps,
+    MappedComponentProperties {}
 
 export const ListEditConfig: EditConfig<ListComponentProperties> = {
   emptyLabel: 'List',
@@ -122,13 +110,13 @@ export const ListEditConfig: EditConfig<ListComponentProperties> = {
   },
 };
 
-interface NavigationComponentProperties extends MappedComponentProperties {
-  items: NavigationItem[];
-}
+interface NavigationComponentProperties
+  extends NavigationProps,
+    MappedComponentProperties {}
 
 export const NavigationEditConfig: EditConfig<NavigationComponentProperties> = {
   emptyLabel: 'Navigation',
-  isEmpty(props: { items: NavigationItem[] }) {
+  isEmpty(props: NavigationComponentProperties) {
     return NavigationIsEmpty(props);
   },
 };
@@ -144,9 +132,9 @@ export const TeaserEditConfig: EditConfig<TeaserComponentProperties> = {
   },
 };
 
-interface TitleComponentProperties extends MappedComponentProperties {
-  text: string;
-}
+interface TitleComponentProperties
+  extends TitleProps,
+    MappedComponentProperties {}
 
 export const TitleEditConfig: EditConfig<TitleComponentProperties> = {
   emptyLabel: 'Title',
@@ -155,9 +143,9 @@ export const TitleEditConfig: EditConfig<TitleComponentProperties> = {
   },
 };
 
-interface TextComponentProperties extends MappedComponentProperties {
-  text: string;
-}
+interface TextComponentProperties
+  extends TextProps,
+    MappedComponentProperties {}
 
 export const TextEditConfig: EditConfig<TextComponentProperties> = {
   emptyLabel: 'Text',

@@ -11,7 +11,6 @@ import EditorPlaceHolder from '@/components/EditorPlaceHolder';
 export interface TextProps extends CoreComponentModel, RoutedModel {
   text?: string;
   richText?: boolean;
-  cqPath?: string;
   id?: string;
 }
 
