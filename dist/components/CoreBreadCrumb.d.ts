@@ -13,7 +13,7 @@ export interface BreadCrumbItem extends RoutedModel, HasBaseCssClass {
     navigable?: boolean;
     title: string;
 }
-interface BreadCrumbProps extends CoreComponentModel, RoutedModel {
+export interface BreadCrumbProps extends CoreComponentModel, RoutedModel {
     ariaLabel: string;
     items: BreadCrumbItem[];
 }

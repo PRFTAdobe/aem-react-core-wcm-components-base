@@ -5,7 +5,6 @@ import { CoreComponentModel, RoutedModel } from './ComponentProperties';
 export interface TextProps extends CoreComponentModel, RoutedModel {
     text?: string;
     richText?: boolean;
-    cqPath?: string;
     id?: string;
 }
 export declare const isEmpty: (text?: string) => boolean;
