@@ -8,7 +8,6 @@ import {
 import CoreLink from '@/components/CoreLink';
 import EditorPlaceHolder from '@/components/EditorPlaceHolder';
 import './CoreBreadCrumb.css';
-import { MappedComponentProperties } from '@adobe/aem-react-editable-components';
 
 interface BreadCrumbLink {
   attributes?: object;
@@ -24,10 +23,7 @@ export interface BreadCrumbItem extends RoutedModel, HasBaseCssClass {
   title: string;
 }
 
-export interface BreadCrumbProps
-  extends CoreComponentModel,
-    RoutedModel,
-    MappedComponentProperties {
+export interface BreadCrumbProps extends CoreComponentModel, RoutedModel {
   ariaLabel: string;
   items: BreadCrumbItem[];
 }

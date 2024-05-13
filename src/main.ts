@@ -1,5 +1,4 @@
 export * from '@/components/CoreEditConfigs';
-export type { BreadCrumbProps } from '@/components/CoreBreadCrumb';
 export { default as CoreBreadCrumb } from '@/components/CoreBreadCrumb';
 export { default as CoreButton } from '@/components/CoreButton';
 export { default as CoreDownload } from '@/components/CoreDownload';

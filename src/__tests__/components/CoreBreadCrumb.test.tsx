@@ -5,12 +5,7 @@ import CoreBreadCrumb, { BreadCrumbItem } from '@/components/CoreBreadCrumb';
 describe('CoreBreadCrumb ->', () => {
   it('Renders without crashing', () => {
     const { container } = render(
-      <CoreBreadCrumb
-        ariaLabel="Label"
-        cqPath=""
-        isInEditor={false}
-        items={[]}
-      />,
+      <CoreBreadCrumb ariaLabel="Label" isInEditor={false} items={[]} />,
     );
     expect(container.querySelector('.cmp-breadCrumb')).toBeNull();
   });
@@ -38,12 +33,7 @@ describe('CoreBreadCrumb ->', () => {
     ];
 
     const { container } = render(
-      <CoreBreadCrumb
-        ariaLabel="Label"
-        cqPath=""
-        isInEditor={false}
-        items={items}
-      />,
+      <CoreBreadCrumb ariaLabel="Label" isInEditor={false} items={items} />,
     );
     expect(container.querySelector('.cmp-breadcrumb')).not.toBeNull();
 
@@ -78,12 +68,7 @@ describe('CoreBreadCrumb ->', () => {
 
     const { container } = render(
       <MemoryRouter>
-        <CoreBreadCrumb
-          ariaLabel="Label"
-          cqPath=""
-          isInEditor={false}
-          items={items}
-        />
+        <CoreBreadCrumb ariaLabel="Label" isInEditor={false} items={items} />
       </MemoryRouter>,
     );
     expect(container.querySelector('.cmp-breadcrumb')).not.toBeNull();
