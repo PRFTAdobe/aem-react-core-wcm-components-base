@@ -26,7 +26,7 @@ import { isEmpty as TeaserIsEmpty, TeaserProps } from '@/components/CoreTeaser';
 import { isEmpty as TitleIsEmpty, TitleProps } from '@/components/CoreTitle';
 import { isEmpty as TextIsEmpty, TextProps } from '@/components/CoreText';
 
-interface BreadcrumbComponentProperties
+export interface BreadcrumbComponentProperties
   extends BreadCrumbProps,
     MappedComponentProperties {}
 
@@ -37,7 +37,7 @@ export const BreadCrumbEditConfig: EditConfig<BreadcrumbComponentProperties> = {
   },
 };
 
-interface ButtonComponentProperties
+export interface ButtonComponentProperties
   extends ButtonProps,
     MappedComponentProperties {}
 
@@ -48,7 +48,7 @@ export const ButtonEditConfig: EditConfig<ButtonComponentProperties> = {
   },
 };
 
-interface DownloadComponentProperties
+export interface DownloadComponentProperties
   extends DownloadProps,
     MappedComponentProperties {}
 
@@ -64,7 +64,7 @@ export const DownloadEditConfig: EditConfig<DownloadComponentProperties> = {
   },
 };
 
-interface EmbedComponentProperties
+export interface EmbedComponentProperties
   extends EmbedProps,
     MappedComponentProperties {}
 
@@ -75,7 +75,7 @@ export const EmbedEditConfig: EditConfig<EmbedComponentProperties> = {
   },
 };
 
-interface ImageComponentProperties
+export interface ImageComponentProperties
   extends ImageProps,
     MappedComponentProperties {}
 
@@ -86,7 +86,7 @@ export const ImageEditConfig: EditConfig<ImageComponentProperties> = {
   },
 };
 
-interface LanguageNavigationComponentProperties
+export interface LanguageNavigationComponentProperties
   extends LanguageNavigationProps,
     MappedComponentProperties {}
 
@@ -98,7 +98,7 @@ export const LanguageNavigationEditConfig: EditConfig<LanguageNavigationComponen
     },
   };
 
-interface ListComponentProperties
+export interface ListComponentProperties
   extends ListProps,
     MappedComponentProperties {}
 
@@ -110,7 +110,7 @@ export const ListEditConfig: EditConfig<ListComponentProperties> = {
   },
 };
 
-interface NavigationComponentProperties
+export interface NavigationComponentProperties
   extends NavigationProps,
     MappedComponentProperties {}
 
@@ -121,7 +121,7 @@ export const NavigationEditConfig: EditConfig<NavigationComponentProperties> = {
   },
 };
 
-interface TeaserComponentProperties
+export interface TeaserComponentProperties
   extends TeaserProps,
     MappedComponentProperties {}
 
@@ -132,7 +132,7 @@ export const TeaserEditConfig: EditConfig<TeaserComponentProperties> = {
   },
 };
 
-interface TitleComponentProperties
+export interface TitleComponentProperties
   extends TitleProps,
     MappedComponentProperties {}
 
@@ -143,7 +143,7 @@ export const TitleEditConfig: EditConfig<TitleComponentProperties> = {
   },
 };
 
-interface TextComponentProperties
+export interface TextComponentProperties
   extends TextProps,
     MappedComponentProperties {}
 
