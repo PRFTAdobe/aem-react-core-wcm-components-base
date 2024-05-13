@@ -1,5 +1,6 @@
 import { default as React } from 'react';
 import { CoreComponentModel, HasBaseCssClass, RoutedModel } from './ComponentProperties';
+import { MappedComponentProperties } from '@adobe/aem-react-editable-components';
 
 interface BreadCrumbLink {
     attributes?: object;
@@ -13,7 +14,7 @@ export interface BreadCrumbItem extends RoutedModel, HasBaseCssClass {
     navigable?: boolean;
     title: string;
 }
-export interface BreadCrumbProps extends CoreComponentModel, RoutedModel {
+export interface BreadCrumbProps extends CoreComponentModel, RoutedModel, MappedComponentProperties {
     ariaLabel: string;
     items: BreadCrumbItem[];
 }

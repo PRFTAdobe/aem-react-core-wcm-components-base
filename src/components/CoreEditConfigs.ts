@@ -26,13 +26,9 @@ import { isEmpty as TeaserIsEmpty, TeaserProps } from '@/components/CoreTeaser';
 import { isEmpty as TitleIsEmpty, TitleProps } from '@/components/CoreTitle';
 import { isEmpty as TextIsEmpty, TextProps } from '@/components/CoreText';
 
-export interface BreadcrumbComponentProperties
-  extends BreadCrumbProps,
-    MappedComponentProperties {}
-
-export const BreadCrumbEditConfig: EditConfig<BreadcrumbComponentProperties> = {
+export const BreadCrumbEditConfig: EditConfig<BreadCrumbProps> = {
   emptyLabel: 'Breadcrumb',
-  isEmpty(props: BreadcrumbComponentProperties) {
+  isEmpty(props: BreadCrumbProps) {
     return BreadCrumbIsEmpty(props);
   },
 };
