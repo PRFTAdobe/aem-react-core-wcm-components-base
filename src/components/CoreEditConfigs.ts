@@ -33,7 +33,7 @@ export interface BreadcrumbComponentProperties
 export const BreadCrumbEditConfig: EditConfig<BreadcrumbComponentProperties> = {
   emptyLabel: 'Breadcrumb',
   isEmpty(props: BreadcrumbComponentProperties) {
-    return BreadCrumbIsEmpty(props);
+    return BreadCrumbIsEmpty(props.items);
   },
 };
 

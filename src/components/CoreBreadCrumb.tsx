@@ -28,8 +28,8 @@ export interface BreadCrumbProps extends CoreComponentModel, RoutedModel {
   items: BreadCrumbItem[];
 }
 
-export const isEmpty = (props: { items: BreadCrumbItem[] }) => {
-  return props.items === null || props.items.length === 0;
+export const isEmpty = (items: BreadCrumbItem[]) => {
+  return items === null || items.length === 0;
 };
 
 const BreadCrumbSpan = ({ title }: { title: string }) => (
@@ -85,7 +85,7 @@ const CoreBreadCrumb = ({
   items,
   baseCssClass = 'cmp-breadcrumb',
 }: BreadCrumbProps): React.JSX.Element | null => {
-  return isEmpty({ items }) ? (
+  return isEmpty(items) ? (
     isInEditor && !hidePlaceHolder ? (
       <EditorPlaceHolder componentTitle="Breadcrumb" />
     ) : null

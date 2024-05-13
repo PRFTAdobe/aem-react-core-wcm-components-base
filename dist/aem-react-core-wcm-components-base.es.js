@@ -680,7 +680,7 @@ const F = (e) => {
       children: s
     }
   );
-}, Ke = (e) => e.items === null || e.items.length === 0, Xe = ({ title: e }) => /* @__PURE__ */ i.jsx("span", { itemProp: "name", children: e }), an = ({
+}, Ke = (e) => e === null || e.length === 0, Xe = ({ title: e }) => /* @__PURE__ */ i.jsx("span", { itemProp: "name", children: e }), an = ({
   baseCssClass: e,
   link: t,
   routed: a,
@@ -723,7 +723,7 @@ const F = (e) => {
   isInEditor: r,
   items: o,
   baseCssClass: s = "cmp-breadcrumb"
-}) => Ke({ items: o }) ? r && !t ? /* @__PURE__ */ i.jsx(N, { componentTitle: "Breadcrumb" }) : null : /* @__PURE__ */ i.jsx(
+}) => Ke(o) ? r && !t ? /* @__PURE__ */ i.jsx(N, { componentTitle: "Breadcrumb" }) : null : /* @__PURE__ */ i.jsx(
   "nav",
   {
     "aria-label": e || "BreadCrumb",
@@ -1858,7 +1858,7 @@ const ct = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, ut
 }, rr = {
   emptyLabel: "Breadcrumb",
   isEmpty(e) {
-    return Ke(e);
+    return Ke(e.items);
   }
 }, ar = {
   emptyLabel: "Button",

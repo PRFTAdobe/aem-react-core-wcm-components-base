@@ -17,9 +17,7 @@ export interface BreadCrumbProps extends CoreComponentModel, RoutedModel {
     ariaLabel: string;
     items: BreadCrumbItem[];
 }
-export declare const isEmpty: (props: {
-    items: BreadCrumbItem[];
-}) => boolean;
+export declare const isEmpty: (items: BreadCrumbItem[]) => boolean;
 declare const BreadCrumbLink: ({ baseCssClass, link, routed, title, }: BreadCrumbItem) => import("react/jsx-runtime").JSX.Element;
 declare const CoreBreadCrumb: ({ ariaLabel, hidePlaceHolder, id, isInEditor, items, baseCssClass, }: BreadCrumbProps) => React.JSX.Element | null;
 export default CoreBreadCrumb;
