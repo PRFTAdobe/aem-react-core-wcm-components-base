@@ -11,7 +11,9 @@ import { TeaserProps } from './CoreTeaser';
 import { TitleProps } from './CoreTitle';
 import { TextProps } from './CoreText';
 
-export declare const BreadCrumbEditConfig: EditConfig<BreadCrumbProps>;
+export interface BreadcrumbComponentProperties extends BreadCrumbProps, MappedComponentProperties {
+}
+export declare const BreadCrumbEditConfig: EditConfig<BreadcrumbComponentProperties>;
 export interface ButtonComponentProperties extends ButtonProps, MappedComponentProperties {
 }
 export declare const ButtonEditConfig: EditConfig<ButtonComponentProperties>;
