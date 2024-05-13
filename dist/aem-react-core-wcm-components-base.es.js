@@ -680,7 +680,7 @@ const F = (e) => {
       children: s
     }
   );
-}, Ke = (e) => e === null || e.length === 0, Xe = ({ title: e }) => /* @__PURE__ */ i.jsx("span", { itemProp: "name", children: e }), an = ({
+}, Ke = (e) => typeof e > "u" || e === null || e.length === 0, Xe = ({ title: e }) => /* @__PURE__ */ i.jsx("span", { itemProp: "name", children: e }), an = ({
   baseCssClass: e,
   link: t,
   routed: a,

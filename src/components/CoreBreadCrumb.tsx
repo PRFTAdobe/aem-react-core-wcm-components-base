@@ -28,8 +28,8 @@ export interface BreadCrumbProps extends CoreComponentModel, RoutedModel {
   items: BreadCrumbItem[];
 }
 
-export const isEmpty = (items: BreadCrumbItem[]) => {
-  return items === null || items.length === 0;
+export const isEmpty = (items?: BreadCrumbItem[]) => {
+  return typeof items === 'undefined' || items === null || items.length === 0;
 };
 
 const BreadCrumbSpan = ({ title }: { title: string }) => (
