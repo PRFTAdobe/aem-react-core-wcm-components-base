@@ -80,7 +80,7 @@
   margin-block-start: 16px;
 }
 
-@media only screen and (width >= 480px) {
+@media only screen and (min-width: 480px) {
   .cmp-teaser__content {
     font-size: 14px;
     padding-block: 32px;

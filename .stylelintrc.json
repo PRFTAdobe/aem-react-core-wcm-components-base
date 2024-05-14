@@ -13,6 +13,7 @@
       "custom-properties",
       "declarations"
     ],
+    "media-feature-range-notation": null,
     "order/properties-alphabetical-order": true,
     "csstools/use-logical": "always"
   }
