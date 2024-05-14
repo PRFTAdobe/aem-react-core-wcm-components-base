@@ -17,7 +17,7 @@ import {
   isEmpty as LanguageNavigationIsEmpty,
   LanguageNavigationProps,
 } from '@/components/CoreLanguageNavigation';
-import { isEmpty as ListItemIsEmpty, ListProps } from '@/components/CoreList';
+import { isEmpty as ListIsEmpty, ListProps } from '@/components/CoreList';
 import {
   isEmpty as NavigationIsEmpty,
   NavigationProps,
@@ -106,7 +106,7 @@ export const ListEditConfig: EditConfig<ListComponentProperties> = {
   emptyLabel: 'List',
 
   isEmpty(props: ListComponentProperties) {
-    return ListItemIsEmpty(props.items);
+    return ListIsEmpty(props.items);
   },
 };
 
