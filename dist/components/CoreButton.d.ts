@@ -11,8 +11,9 @@ export interface ButtonProps extends CoreComponentModel, RoutedModel {
     icon?: string;
     text?: string;
     type?: 'submit' | 'reset' | 'button';
+    routed?: boolean;
     handleOnClick?(event: React.MouseEvent): void;
 }
 export declare const isEmpty: (text?: string) => boolean;
-declare const CoreButton: ({ ariaLabel, buttonLink, className, hidePlaceHolder, id, icon, isInEditor, text, handleOnClick, baseCssClass, type, }: ButtonProps) => React.JSX.Element | null;
+declare const CoreButton: ({ ariaLabel, buttonLink, className, hidePlaceHolder, id, icon, isInEditor, text, handleOnClick, routed, baseCssClass, type, }: ButtonProps) => React.JSX.Element | null;
 export default CoreButton;
