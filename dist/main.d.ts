@@ -1,3 +1,4 @@
+export * from './components/ComponentProperties';
 export * from './components/CoreEditConfigs';
 export type { NavigationItem, NavigationProps, } from './components/CoreNavigation';
 export type { ButtonProps } from './components/CoreButton';
