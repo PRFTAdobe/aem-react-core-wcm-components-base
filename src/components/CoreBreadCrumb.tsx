@@ -32,9 +32,33 @@ export const isEmpty = (items?: BreadCrumbItem[]) => {
   return typeof items === 'undefined' || items === null || items.length === 0;
 };
 
-const BreadCrumbSpan = ({ title }: { title: string }) => (
-  <span itemProp="name">{title}</span>
-);
+const BreadCrumbSpan = ({
+  title,
+  current = false,
+}: {
+  title: string;
+  current?: boolean;
+}) => {
+  const spanProps: {
+    itemProp: string;
+    'aria-current'?:
+      | boolean
+      | 'page'
+      | 'false'
+      | 'true'
+      | 'step'
+      | 'location'
+      | 'date'
+      | 'time'
+      | undefined;
+  } = {
+    itemProp: 'name',
+  };
+  if (current) {
+    spanProps['aria-current'] = 'page';
+  }
+  return <span {...spanProps}>{title}</span>;
+};
 
 const BreadCrumbLink = ({
   baseCssClass,
@@ -71,7 +95,9 @@ const BreadCrumbListItem = (crumbItem: BreadCrumbItem) => {
       itemType="http://schema.org/ListItem"
     >
       {!crumbItem.active && <BreadCrumbLink {...crumbItem} />}
-      {crumbItem.active && <BreadCrumbSpan title={crumbItem.title} />}
+      {crumbItem.active && (
+        <BreadCrumbSpan current={true} title={crumbItem.title} />
+      )}
       <meta content={contentIndex} itemProp="position" />
     </li>
   );
