@@ -1,5 +1,6 @@
 export * from './components/CoreEditConfigs';
 export type { NavigationItem, NavigationProps, } from './components/CoreNavigation';
+export type { ButtonProps } from './components/CoreButton';
 export type { ImageProps } from './components/CoreImage';
 export type { TitleProps } from './components/CoreTitle';
 export { default as CoreBreadCrumb } from './components/CoreBreadCrumb';
