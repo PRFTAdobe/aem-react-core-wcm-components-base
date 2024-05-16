@@ -119,20 +119,31 @@ const CoreTeaser = (props: TeaserProps): React.JSX.Element | null => {
     ) : null
   ) : (
     <div
-      className={classNames(propsWithBaseCssClass.baseCssClass, {
-        'cq-dd-image': propsWithBaseCssClass.isInEditor,
-      })}
+      className={classNames(
+        propsWithBaseCssClass.baseCssClass,
+        {
+          [`${propsWithBaseCssClass.baseCssClass}--with-image`]:
+            props.imagePath,
+        },
+        {
+          'cq-dd-image': propsWithBaseCssClass.isInEditor,
+        },
+      )}
       id={props.id}
     >
-      {props.imagePath && <TeaserImage {...propsWithBaseCssClass} />}
-      <div className={`${propsWithBaseCssClass.baseCssClass}__content`}>
-        {props.pretitle && <TeaserPreTitle {...propsWithBaseCssClass} />}
-        {props.title && <TeaserTitle {...propsWithBaseCssClass} />}
-        {props.description && <TeaserDescription {...propsWithBaseCssClass} />}
-        {props.actions.length > 0 && propsWithBaseCssClass.actionsEnabled && (
-          <TeaserActions {...propsWithBaseCssClass} />
-        )}
-      </div>
+      <section>
+        <div className={`${propsWithBaseCssClass.baseCssClass}__content`}>
+          {props.pretitle && <TeaserPreTitle {...propsWithBaseCssClass} />}
+          {props.title && <TeaserTitle {...propsWithBaseCssClass} />}
+          {props.description && (
+            <TeaserDescription {...propsWithBaseCssClass} />
+          )}
+          {props.actions.length > 0 && propsWithBaseCssClass.actionsEnabled && (
+            <TeaserActions {...propsWithBaseCssClass} />
+          )}
+        </div>
+        {props.imagePath && <TeaserImage {...propsWithBaseCssClass} />}
+      </section>
     </div>
   );
 };
