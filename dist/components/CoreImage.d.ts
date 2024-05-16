@@ -4,7 +4,11 @@ import { CoreComponentModel, RoutedModel } from './ComponentProperties';
 export interface ImageProps extends CoreComponentModel, RoutedModel {
     alt: string;
     displayPopupTitle?: boolean;
-    link?: string;
+    imageLink?: {
+        attributes?: object;
+        url: string;
+        valid?: boolean;
+    };
     src: string;
     title?: string;
     width?: string;

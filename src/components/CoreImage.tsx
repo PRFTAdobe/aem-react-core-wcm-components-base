@@ -12,7 +12,11 @@ import './CoreImage.css';
 export interface ImageProps extends CoreComponentModel, RoutedModel {
   alt: string;
   displayPopupTitle?: boolean;
-  link?: string;
+  imageLink?: {
+    attributes?: object;
+    url: string;
+    valid?: boolean;
+  };
   src: string;
   title?: string;
   width?: string;
@@ -58,25 +62,25 @@ const ImageContents = ({
   alt,
   baseCssClass,
   isInEditor,
-  link,
+  imageLink,
   routed,
   src,
   title,
   width,
 }: ImageProps) => {
-  if (link && link.trim().length > 0) {
+  if (imageLink && imageLink.url.trim().length > 0) {
     return (
       <CoreLink
         className={`${baseCssClass}__link`}
-        href={link}
+        href={imageLink.url}
         isRouted={routed}
       >
         <ImageInnerContents
           {...{
             alt,
             baseCssClass,
+            imageLink,
             isInEditor,
-            link,
             routed,
             src,
             title,
@@ -91,8 +95,8 @@ const ImageContents = ({
       {...{
         alt,
         baseCssClass,
+        imageLink,
         isInEditor,
-        link,
         routed,
         src,
         title,
@@ -110,7 +114,7 @@ const CoreImage = forwardRef(
       hidePlaceHolder,
       id,
       isInEditor = false,
-      link,
+      imageLink,
       routed,
       src,
       title,
@@ -140,8 +144,8 @@ const CoreImage = forwardRef(
           {...{
             alt,
             baseCssClass,
+            imageLink,
             isInEditor,
-            link,
             routed,
             src,
             title,

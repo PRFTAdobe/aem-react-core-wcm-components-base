@@ -49,8 +49,8 @@ describe('CoreImage ->', () => {
   it('Renders with a link', () => {
     const props: ImageProps = {
       alt: 'Some Image',
+      imageLink: { url: '/content/some/link.html' },
       isInEditor: false,
-      link: '/content/some/link.html',
       routed: true,
       src: '/content/dam/image.jpg',
     };

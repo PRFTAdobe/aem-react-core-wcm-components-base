@@ -1149,24 +1149,24 @@ const F = (e) => {
   alt: e,
   baseCssClass: t,
   isInEditor: a,
-  link: r,
+  imageLink: r,
   routed: o,
   src: s,
   title: u,
   width: g
-}) => r && r.trim().length > 0 ? /* @__PURE__ */ i.jsx(
+}) => r && r.url.trim().length > 0 ? /* @__PURE__ */ i.jsx(
   F,
   {
     className: `${t}__link`,
-    href: r,
+    href: r.url,
     isRouted: o,
     children: /* @__PURE__ */ i.jsx(
       Ze,
       {
         alt: e,
         baseCssClass: t,
+        imageLink: r,
         isInEditor: a,
-        link: r,
         routed: o,
         src: s,
         title: u,
@@ -1179,8 +1179,8 @@ const F = (e) => {
   {
     alt: e,
     baseCssClass: t,
+    imageLink: r,
     isInEditor: a,
-    link: r,
     routed: o,
     src: s,
     title: u,
@@ -1193,7 +1193,7 @@ const F = (e) => {
     hidePlaceHolder: a,
     id: r,
     isInEditor: o = !1,
-    link: s,
+    imageLink: s,
     routed: u,
     src: g,
     title: m,
@@ -1208,8 +1208,8 @@ const F = (e) => {
       {
         alt: e,
         baseCssClass: t,
+        imageLink: s,
         isInEditor: o,
-        link: s,
         routed: u,
         src: g,
         title: m,
