@@ -3,6 +3,7 @@ export type {
   NavigationItem,
   NavigationProps,
 } from '@/components/CoreNavigation';
+export type { ImageProps } from '@/components/CoreImage';
 export { default as CoreBreadCrumb } from '@/components/CoreBreadCrumb';
 export { default as CoreButton } from '@/components/CoreButton';
 export { default as CoreDownload } from '@/components/CoreDownload';
