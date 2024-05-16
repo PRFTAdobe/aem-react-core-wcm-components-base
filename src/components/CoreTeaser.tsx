@@ -39,7 +39,12 @@ export interface TeaserProps extends CoreComponentModel, RoutedModel {
 }
 
 export const isEmpty = (props: TeaserProps): boolean => {
-  return !props.imagePath && !props.description && props.actions.length === 0;
+  return (
+    !props.title &&
+    !props.imagePath &&
+    !props.description &&
+    props.actions.length === 0
+  );
 };
 
 const TeaserImage = (props: TeaserProps) => {

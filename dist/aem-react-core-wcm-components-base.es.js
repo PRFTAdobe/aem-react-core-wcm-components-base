@@ -1714,7 +1714,7 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
     className: `${e.baseCssClass ?? "cmp-title"}${dt(e)}text`
   },
   /* @__PURE__ */ i.jsx(Nn, { ...e })
-) }), ft = (e) => !e.imagePath && !e.description && e.actions.length === 0, Ln = (e) => /* @__PURE__ */ i.jsx("div", { className: `${e.baseCssClass}__image`, children: /* @__PURE__ */ i.jsx(
+) }), ft = (e) => !e.title && !e.imagePath && !e.description && e.actions.length === 0, Ln = (e) => /* @__PURE__ */ i.jsx("div", { className: `${e.baseCssClass}__image`, children: /* @__PURE__ */ i.jsx(
   it,
   {
     alt: e.imageAlt,
