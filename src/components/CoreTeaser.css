@@ -64,6 +64,13 @@
   grid-row-start: 1;
 }
 
+.cmp-teaser__image .cmp-image__image {
+  block-size: 100%;
+  display: block;
+  inline-size: 100%;
+  object-fit: cover;
+}
+
 .cmp-teaser--with-image .cmp-teaser__title-link,
 .cmp-teaser--with-image .cmp-teaser__title-link.cmp-link--active {
   color: #fff;
