@@ -78,20 +78,16 @@ const DownloadHeadingContent = ({
     handleOnClick && handleOnClick(event);
   };
 
-  return (
-    <>
-      {!!url ||
-        (!!handleOnClick && (
-          <a
-            className={`${baseCssClass}__title-link`}
-            href={getDownloadHref({ url })}
-            onClick={onClick}
-          >
-            {title}
-          </a>
-        ))}
-      {!url && <> {title} </>}
-    </>
+  return (url && url?.length !== 0) ?? handleOnClick ? (
+    <a
+      className={`${baseCssClass}__title-link`}
+      href={getDownloadHref({ url })}
+      onClick={onClick}
+    >
+      {title}
+    </a>
+  ) : (
+    <>{title}</>
   );
 };
 
@@ -169,7 +165,7 @@ const DownloadDescription = ({
 };
 
 const DownloadLink = ({
-  actionText,
+  actionText = 'Download',
   baseCssClass,
   cqType,
   componentMapping,

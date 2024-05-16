@@ -37,26 +37,24 @@ describe('CoreDownload ->', () => {
     let captured = false;
 
     const props = {
-      actionText: 'Download now!!!',
       componentMapping: ComponentMapping,
       cqType: 'chumley/components/download',
-      description:
-        '<p>Asset uploaded directly from a local file system</p>\\r\\n',
+      description: '<p>Lava flowing into the ocean</p>',
       displayFilename: true,
       displayFormat: true,
       displaySize: true,
-      extension: 'jpg',
+      extension: 'jpeg',
       filename: 'lava-into-ocean.jpg',
       format: 'image/jpeg',
       handleOnClick: () => {
         captured = true;
       },
-      hidePlaceHolder: false,
+      id: 'download-35b1ba8235',
       isInEditor: false,
       size: '81 KB',
-      title: 'Uploaded Asset',
-      titleType: 'h2',
-      url: '/content/core-components-examples/library/page-authoring/download/jcr:content/root/responsivegrid/demo_68071479/component/download/file.coredownload.jpeg/lava-into-ocean.jpg',
+      title: 'Lava flowing into the ocean',
+      titleType: 'h3',
+      url: '/content/dam/chumley/lava-into-ocean.jpg.coredownload.jpeg',
     };
 
     const { container } = render(
