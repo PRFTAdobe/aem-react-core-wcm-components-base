@@ -10,5 +10,5 @@ export interface ImageProps extends CoreComponentModel, RoutedModel {
     width?: string;
 }
 export declare const isEmpty: (src: string) => boolean;
-declare const CoreImage: ({ alt, baseCssClass, hidePlaceHolder, id, isInEditor, link, routed, src, title, width, }: ImageProps) => React.JSX.Element | null;
+declare const CoreImage: React.ForwardRefExoticComponent<ImageProps & React.RefAttributes<HTMLDivElement>>;
 export default CoreImage;

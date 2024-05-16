@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, forwardRef } from 'react';
 
 import classNames from 'classnames';
 import {
@@ -102,50 +102,57 @@ const ImageContents = ({
   );
 };
 
-const CoreImage = ({
-  alt,
-  baseCssClass = 'cmp-image',
-  hidePlaceHolder,
-  id,
-  isInEditor = false,
-  link,
-  routed,
-  src,
-  title,
-  width,
-}: ImageProps): React.JSX.Element | null => {
-  const attributes: {
-    className: string;
-    id?: string;
-    style?: CSSProperties;
-  } = {
-    className: classNames(baseCssClass, { 'cq-dd-image': isInEditor }),
-    id,
-  };
+const CoreImage = forwardRef(
+  (
+    {
+      alt,
+      baseCssClass = 'cmp-image',
+      hidePlaceHolder,
+      id,
+      isInEditor = false,
+      link,
+      routed,
+      src,
+      title,
+      width,
+    }: ImageProps,
+    ref: React.ForwardedRef<HTMLDivElement>,
+  ): React.JSX.Element | null => {
+    const attributes: {
+      className: string;
+      id?: string;
+      style?: CSSProperties;
+    } = {
+      className: classNames(baseCssClass, { 'cq-dd-image': isInEditor }),
+      id,
+    };
 
-  if (width) {
-    attributes.style = getAssetMaxInlineSize(width) as CSSProperties;
-  }
-  return isEmpty(src) ? (
-    isInEditor && !hidePlaceHolder ? (
-      <EditorPlaceHolder componentTitle="Image" />
-    ) : null
-  ) : (
-    <div {...attributes}>
-      <ImageContents
-        {...{
-          alt,
-          baseCssClass,
-          isInEditor,
-          link,
-          routed,
-          src,
-          title,
-          width,
-        }}
-      />
-    </div>
-  );
-};
+    if (width) {
+      attributes.style = getAssetMaxInlineSize(width) as CSSProperties;
+    }
+    return isEmpty(src) ? (
+      isInEditor && !hidePlaceHolder ? (
+        <EditorPlaceHolder componentTitle="Image" />
+      ) : null
+    ) : (
+      <div {...attributes} ref={ref}>
+        <ImageContents
+          {...{
+            alt,
+            baseCssClass,
+            isInEditor,
+            link,
+            routed,
+            src,
+            title,
+            width,
+          }}
+        />
+      </div>
+    );
+  },
+);
+
+CoreImage.displayName = 'CoreImage';
 
 export default CoreImage;
