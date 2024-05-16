@@ -47,9 +47,12 @@ const ImageInnerContents = (props: ImageProps) => {
         src={props.src}
       />
       {!!props.title && (
-        <span className={`${props.baseCssClass}__title`} itemProp="caption">
+        <figcaption
+          className={`${props.baseCssClass}__title`}
+          itemProp="caption"
+        >
           {props.title}
-        </span>
+        </figcaption>
       )}
       {props.displayPopupTitle && !!props.title && (
         <meta content={props.title} itemProp="caption" />

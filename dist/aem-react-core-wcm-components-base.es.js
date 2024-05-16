@@ -1143,7 +1143,14 @@ const F = (e) => {
       src: e.src
     }
   ),
-  !!e.title && /* @__PURE__ */ i.jsx("span", { className: `${e.baseCssClass}__title`, itemProp: "caption", children: e.title }),
+  !!e.title && /* @__PURE__ */ i.jsx(
+    "figcaption",
+    {
+      className: `${e.baseCssClass}__title`,
+      itemProp: "caption",
+      children: e.title
+    }
+  ),
   e.displayPopupTitle && !!e.title && /* @__PURE__ */ i.jsx("meta", { content: e.title, itemProp: "caption" })
 ] }), Tn = ({
   alt: e,
