@@ -18,6 +18,7 @@ export interface ButtonProps extends CoreComponentModel, RoutedModel {
   icon?: string;
   text?: string;
   type?: 'submit' | 'reset' | 'button';
+  routed?: boolean;
 
   handleOnClick?(event: React.MouseEvent): void;
 }
@@ -52,6 +53,7 @@ const CoreButton = ({
   isInEditor,
   text,
   handleOnClick,
+  routed,
   baseCssClass = 'cmp-button',
   type = 'button',
 }: ButtonProps): React.JSX.Element | null => {
@@ -76,6 +78,7 @@ const CoreButton = ({
         className={classNames(baseCssClass, className)}
         href={buttonLink?.url}
         id={id}
+        isRouted={routed}
         onClick={onClick}
       >
         <ButtonContent

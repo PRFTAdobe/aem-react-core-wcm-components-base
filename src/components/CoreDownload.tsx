@@ -190,7 +190,9 @@ const DownloadLink = ({
   }
 
   const onClick = (event: React.MouseEvent) => {
-    handleOnClick && handleOnClick(event);
+    if (handleOnClick) {
+      handleOnClick(event);
+    }
   };
 
   return (
@@ -200,6 +202,7 @@ const DownloadLink = ({
         className: `${baseCssClass}__action`,
         handleOnClick: onClick,
         isInEditor: isInEditor,
+        routed: false,
         text: actionText,
       }}
     />
