@@ -12,7 +12,9 @@ interface LinkProps extends HasBaseCssClass {
 }
 
 const CoreLink = (props: LinkProps): React.JSX.Element => {
-  const { className, href, isRouted, baseCssClass, ...otherProps } = props;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { className, href, isRouted, baseCssClass, valid, ...otherProps } =
+    props;
   const computedClassName = (
     baseCssClass = 'cmp-link',
     className = '',
