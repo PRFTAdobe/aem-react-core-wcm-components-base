@@ -638,7 +638,7 @@ React keys must be passed directly to JSX without using spread:
 }
 process.env.NODE_ENV === "production" ? ge.exports = rn() : ge.exports = an();
 var i = ge.exports;
-const A = (e) => {
+const k = (e) => {
   const { className: t, href: r, isRouted: a, baseCssClass: o, valid: s, ...u } = e, m = (v = "cmp-link", _ = "", h = !1) => {
     const f = [v];
     return h && f.push(`${v}--active`), _.length && f.push(_), f;
@@ -696,7 +696,7 @@ const A = (e) => {
 }) => {
   const { url: o, ...s } = t;
   return /* @__PURE__ */ i.jsx(
-    A,
+    k,
     {
       className: `${e}__item-link`,
       href: o,
@@ -784,7 +784,7 @@ const A = (e) => {
     g && g(P);
   }, R = !!(t != null && t.url);
   return Qe(m) ? u && !a ? /* @__PURE__ */ i.jsx(N, { componentTitle: "Button" }) : null : R ? /* @__PURE__ */ i.jsx(
-    A,
+    k,
     {
       "aria-label": e,
       className: w(_, r),
@@ -845,10 +845,11 @@ const A = (e) => {
     a && a(s);
   };
   return (r && (r == null ? void 0 : r.length) !== 0) ?? a ? /* @__PURE__ */ i.jsx(
-    "a",
+    k,
     {
       className: `${e}__title-link`,
       href: cn({ url: r }),
+      isRouted: !1,
       onClick: o,
       children: t
     }
@@ -1166,7 +1167,7 @@ const A = (e) => {
   title: u,
   width: m
 }) => a && a.url.trim().length > 0 ? /* @__PURE__ */ i.jsx(
-  A,
+  k,
   {
     className: `${t}__link`,
     href: a.url,
@@ -1245,7 +1246,7 @@ const st = (e) => {
     ),
     children: [
       /* @__PURE__ */ i.jsx(
-        A,
+        k,
         {
           "aria-current": e.active && "page",
           className: `${e.baseCssClass}__item-link`,
@@ -1297,7 +1298,7 @@ const st = (e) => {
   var t;
   return e.items === null || ((t = e.items) == null ? void 0 : t.length) === 0;
 }, Rn = (e) => e.level > 0 ? /* @__PURE__ */ i.jsx(
-  A,
+  k,
   {
     className: `${e.baseCssClass}__item-link`,
     href: e.link.url,
@@ -1555,7 +1556,7 @@ var ve = {}, J = {}, te = "en", xe = {
     return e;
   },
   res: xe
-}, k = function(e, t, r, a) {
+}, A = function(e, t, r, a) {
   var o = {}, s;
   for (s in e)
     o[s] = e[s];
@@ -1673,22 +1674,22 @@ j.locale = function(e, t) {
 j.plugin = function(e, t) {
   J[e] || (J[e] = t);
 };
-re = k(j);
-C = k(j);
+re = A(j);
+C = A(j);
 C.locale = function(e) {
   var t = typeof e == "function" ? e : C.locale[e];
   if (!t)
     return te;
   te = t(j);
-  var r = ve[te] || {}, a = k(xe, r.res, !0), o = k(lt, r.formatter, !0, a), s = k(ct, r.parser, !0, a);
+  var r = ve[te] || {}, a = A(xe, r.res, !0), o = A(lt, r.formatter, !0, a), s = A(ct, r.parser, !0, a);
   C._formatter = re._formatter = o, C._parser = re._parser = s;
   for (var u in J)
     C.extend(J[u]);
   return te;
 };
 C.extend = function(e) {
-  var t = k(C._parser.res, e.res), r = e.extender || {};
-  C._formatter = k(C._formatter, e.formatter, !1, t), C._parser = k(C._parser, e.parser, !1, t);
+  var t = A(C._parser.res, e.res), r = e.extender || {};
+  C._formatter = A(C._formatter, e.formatter, !1, t), C._parser = A(C._parser, e.parser, !1, t);
   for (var a in r)
     C[a] || (C[a] = r[a]);
 };
@@ -1700,7 +1701,7 @@ var wn = C;
 const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt = (e) => e.nested ? "-" : "__", Dn = (e) => {
   var t;
   return /* @__PURE__ */ i.jsx(
-    A,
+    k,
     {
       className: `${e.baseCssClass}${dt(e)}link`,
       href: (t = e.link) == null ? void 0 : t.url,
@@ -1800,7 +1801,7 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
 ] }), Un = (e) => {
   var t;
   return /* @__PURE__ */ i.jsx(
-    A,
+    k,
     {
       className: `${e.baseCssClass}__item-link`,
       href: (t = e.link) == null ? void 0 : t.url,
@@ -1861,7 +1862,7 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
             ...o,
             className: o.class
           };
-          return delete s.class, /* @__PURE__ */ i.jsx(A, { ...s, children: nn(a.children, r) });
+          return delete s.class, /* @__PURE__ */ i.jsx(k, { ...s, children: nn(a.children, r) });
         }
       }
     };
@@ -1950,7 +1951,7 @@ export {
   Qn as CoreEmbed,
   it as CoreImage,
   tr as CoreLanguageNavigation,
-  A as CoreLink,
+  k as CoreLink,
   nr as CoreList,
   er as CoreNavigation,
   gr as CoreSeparator,

@@ -7,6 +7,7 @@ import {
 } from '@/components/ComponentProperties';
 import EditorPlaceHolder from '@/components/EditorPlaceHolder';
 import CoreButton from '@/components/CoreButton';
+import CoreLink from '@/components/CoreLink';
 import './CoreDownload.css';
 
 export interface DownloadProps extends CoreComponentModel, RoutedModel {
@@ -79,13 +80,14 @@ const DownloadHeadingContent = ({
   };
 
   return (url && url?.length !== 0) ?? handleOnClick ? (
-    <a
+    <CoreLink
       className={`${baseCssClass}__title-link`}
       href={getDownloadHref({ url })}
+      isRouted={false}
       onClick={onClick}
     >
       {title}
-    </a>
+    </CoreLink>
   ) : (
     <>{title}</>
   );
