@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import React from 'react';
 import { HasBaseCssClass } from '@/components/ComponentProperties';
+import { AuthoringUtils } from '@adobe/aem-spa-page-model-manager';
 
 interface LinkProps extends HasBaseCssClass {
   className?: string;
@@ -42,7 +43,7 @@ const CoreLink = (props: LinkProps): React.JSX.Element => {
 
   const isExternal = /^https?:\/\//.test(href);
 
-  return isExternal || isRouted === false ? (
+  return isExternal || isRouted === false || AuthoringUtils.isInEditor() ? (
     <a
       className={computedClassName(baseCssClass, className, false).join(' ')}
       href={href}

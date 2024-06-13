@@ -1,9 +1,10 @@
 import ae, { createElement as _e, useRef as Kt, useEffect as Xt, forwardRef as Qt } from "react";
 import w from "classnames";
 import { NavLink as en } from "react-router-dom";
+import { AuthoringUtils as tn } from "@adobe/aem-spa-page-model-manager";
 import { ComponentMapping as qe } from "@adobe/aem-react-editable-components";
 import Ge from "dompurify";
-import ne, { Element as tn, domToReact as nn } from "html-react-parser";
+import ne, { Element as nn, domToReact as rn } from "html-react-parser";
 var ge = { exports: {} }, V = {};
 /**
  * @license React
@@ -15,7 +16,7 @@ var ge = { exports: {} }, V = {};
  * LICENSE file in the root directory of this source tree.
  */
 var We;
-function rn() {
+function an() {
   if (We)
     return V;
   We = 1;
@@ -43,7 +44,7 @@ var z = {};
  * LICENSE file in the root directory of this source tree.
  */
 var Ve;
-function an() {
+function sn() {
   return Ve || (Ve = 1, process.env.NODE_ENV !== "production" && function() {
     var e = ae, t = Symbol.for("react.element"), r = Symbol.for("react.portal"), a = Symbol.for("react.fragment"), o = Symbol.for("react.strict_mode"), s = Symbol.for("react.profiler"), u = Symbol.for("react.provider"), m = Symbol.for("react.context"), g = Symbol.for("react.forward_ref"), v = Symbol.for("react.suspense"), _ = Symbol.for("react.suspense_list"), h = Symbol.for("react.memo"), f = Symbol.for("react.lazy"), R = Symbol.for("react.offscreen"), P = Symbol.iterator, Z = "@@iterator";
     function q(n) {
@@ -636,7 +637,7 @@ React keys must be passed directly to JSX without using spread:
     z.Fragment = a, z.jsx = Jt, z.jsxs = Zt;
   }()), z;
 }
-process.env.NODE_ENV === "production" ? ge.exports = rn() : ge.exports = an();
+process.env.NODE_ENV === "production" ? ge.exports = an() : ge.exports = sn();
 var i = ge.exports;
 const k = (e) => {
   const { className: t, href: r, isRouted: a, baseCssClass: o, valid: s, ...u } = e, m = (v = "cmp-link", _ = "", h = !1) => {
@@ -650,7 +651,7 @@ const k = (e) => {
       href: "#",
       ...u
     }
-  ) : /^https?:\/\//.test(r) || a === !1 ? /* @__PURE__ */ i.jsx(
+  ) : /^https?:\/\//.test(r) || a === !1 || tn.isInEditor() ? /* @__PURE__ */ i.jsx(
     "a",
     {
       className: m(o, t, !1).join(" "),
@@ -665,12 +666,12 @@ const k = (e) => {
       ...u
     }
   );
-}, sn = "Please configure the component", N = ({
+}, on = "Please configure the component", N = ({
   componentTitle: e,
   emptyTextAppend: t,
   classAppend: r
 }) => {
-  const s = (e && e.length > 0 ? `${e} - ` : "") + (t ?? sn);
+  const s = (e && e.length > 0 ? `${e} - ` : "") + (t ?? on);
   return /* @__PURE__ */ i.jsx(
     "div",
     {
@@ -688,7 +689,7 @@ const k = (e) => {
     itemProp: "name"
   };
   return t && (r["aria-current"] = "page"), /* @__PURE__ */ i.jsx("span", { ...r, children: e });
-}, on = ({
+}, ln = ({
   baseCssClass: e,
   link: t,
   routed: r,
@@ -706,7 +707,7 @@ const k = (e) => {
       children: /* @__PURE__ */ i.jsx(Xe, { title: a })
     }
   );
-}, ln = (e) => {
+}, cn = (e) => {
   const t = e.index ? e.index.toString(2) : "noindex";
   return /* @__PURE__ */ i.jsxs(
     "li",
@@ -718,13 +719,13 @@ const k = (e) => {
       itemScope: !0,
       itemType: "http://schema.org/ListItem",
       children: [
-        !e.active && /* @__PURE__ */ i.jsx(on, { ...e }),
+        !e.active && /* @__PURE__ */ i.jsx(ln, { ...e }),
         e.active && /* @__PURE__ */ i.jsx(Xe, { current: !0, title: e.title }),
         /* @__PURE__ */ i.jsx("meta", { content: t, itemProp: "position" })
       ]
     }
   );
-}, Kn = ({
+}, Qn = ({
   ariaLabel: e,
   hidePlaceHolder: t,
   id: r,
@@ -744,7 +745,7 @@ const k = (e) => {
         itemScope: !0,
         itemType: "http://schema.org/BreadcrumbList",
         children: o.map((u, m) => /* @__PURE__ */ _e(
-          ln,
+          cn,
           {
             ...u,
             baseCssClass: s,
@@ -823,7 +824,7 @@ const k = (e) => {
 }, tt = ({
   url: e,
   handleOnClick: t
-}) => (typeof e > "u" || e === null || (e == null ? void 0 : e.length) === 0) && (typeof t > "u" || t === null), cn = ({ url: e }) => e && e.length > 0 ? e : "#", he = (e, t, r, a) => /* @__PURE__ */ i.jsxs(
+}) => (typeof e > "u" || e === null || (e == null ? void 0 : e.length) === 0) && (typeof t > "u" || t === null), un = ({ url: e }) => e && e.length > 0 ? e : "#", he = (e, t, r, a) => /* @__PURE__ */ i.jsxs(
   "div",
   {
     className: w(
@@ -835,7 +836,7 @@ const k = (e) => {
       /* @__PURE__ */ i.jsx("dd", { className: `${a}__property-content`, children: t })
     ]
   }
-), un = ({
+), dn = ({
   baseCssClass: e,
   title: t,
   url: r,
@@ -848,13 +849,13 @@ const k = (e) => {
     k,
     {
       className: `${e}__title-link`,
-      href: cn({ url: r }),
+      href: un({ url: r }),
       isRouted: !1,
       onClick: o,
       children: t
     }
   ) : /* @__PURE__ */ i.jsx(i.Fragment, { children: t });
-}, dn = ({
+}, fn = ({
   handleOnClick: e,
   url: t,
   baseCssClass: r,
@@ -866,7 +867,7 @@ const k = (e) => {
     className: `${r}__title`
   },
   /* @__PURE__ */ i.jsx(
-    un,
+    dn,
     {
       baseCssClass: r,
       handleOnClick: e,
@@ -874,7 +875,7 @@ const k = (e) => {
       url: t
     }
   )
-), fn = ({
+), mn = ({
   baseCssClass: e,
   displayFilename: t,
   displayFormat: r,
@@ -886,7 +887,7 @@ const k = (e) => {
   t && he("Filename", o, "filename", e),
   a && he("Size", u, "size", e),
   r && he("Format", s, "format", e)
-] }), mn = ({
+] }), hn = ({
   baseCssClass: e,
   description: t
 }) => {
@@ -898,7 +899,7 @@ const k = (e) => {
       dangerouslySetInnerHTML: { __html: r }
     }
   );
-}, hn = ({
+}, gn = ({
   actionText: e = "Download",
   baseCssClass: t,
   cqType: r,
@@ -926,7 +927,7 @@ const k = (e) => {
       text: e
     }
   );
-}, Xn = ({
+}, er = ({
   actionText: e,
   componentMapping: t,
   cqType: r,
@@ -954,7 +955,7 @@ const k = (e) => {
       id: g,
       children: [
         !!h && /* @__PURE__ */ i.jsx(
-          dn,
+          fn,
           {
             baseCssClass: P,
             handleOnClick: u,
@@ -963,9 +964,9 @@ const k = (e) => {
             url: R
           }
         ),
-        !!a && /* @__PURE__ */ i.jsx(mn, { baseCssClass: P, description: a }),
+        !!a && /* @__PURE__ */ i.jsx(hn, { baseCssClass: P, description: a }),
         M && /* @__PURE__ */ i.jsx(
-          fn,
+          mn,
           {
             baseCssClass: P,
             displayFilename: Z,
@@ -977,7 +978,7 @@ const k = (e) => {
           }
         ),
         /* @__PURE__ */ i.jsx(
-          hn,
+          gn,
           {
             actionText: e,
             baseCssClass: P,
@@ -995,7 +996,7 @@ const k = (e) => {
   var r, a;
   let t = !1;
   return e.type === "URL" ? t = typeof e.url < "u" && typeof ((r = e.result) == null ? void 0 : r.processor) < "u" : e.type === "EMBEDDABLE" ? t = typeof ((a = e.youTubeProps) == null ? void 0 : a.youtubeVideoId) < "u" : e.type === "HTML" && (t = !!e.html), !e || !t;
-}, gn = (e) => {
+}, vn = (e) => {
   var r;
   let t;
   if (e === "Twitter" ? t = "//platform.twitter.com/widgets.js" : e === "Pinterest" && (t = "//assets.pinterest.com/js/pinit.js"), t) {
@@ -1003,14 +1004,14 @@ const k = (e) => {
     a ? a.dataset.loaded === "true" ? typeof ((r = window.PinUtils) == null ? void 0 : r.build) == "function" && window.PinUtils.build() : a.addEventListener("load", () => {
       var o;
       typeof ((o = window.PinUtils) == null ? void 0 : o.build) == "function" && window.PinUtils.build();
-    }) : vn(t).then(() => {
+    }) : _n(t).then(() => {
       var o;
       typeof ((o = window.PinUtils) == null ? void 0 : o.build) == "function" && window.PinUtils.build(), a = document.querySelector(`script[src="${t}"]`), a.dataset.loaded = "true";
     }).catch((o) => {
       console.error(o);
     });
   }
-}, vn = (e, t = !0, r = "text/javascript") => new Promise((a, o) => {
+}, _n = (e, t = !0, r = "text/javascript") => new Promise((a, o) => {
   try {
     const s = document.createElement("script");
     s.type = r, s.async = t, s.src = e, s.addEventListener("load", () => {
@@ -1024,17 +1025,17 @@ const k = (e) => {
   } catch (s) {
     o(s);
   }
-}), _n = (e) => {
+}), yn = (e) => {
   var t;
   if ((t = e == null ? void 0 : e.options) != null && t.response) {
     const { response: r } = e.options;
     return r.type;
   }
-}, yn = (e) => {
+}, xn = (e) => {
   var t;
   if ((t = e == null ? void 0 : e.options) != null && t.response)
     return e.options.response.url;
-}, xn = (e) => {
+}, bn = (e) => {
   var t;
   if ((t = e == null ? void 0 : e.options) != null && t.response)
     return e.options.response.title;
@@ -1044,7 +1045,7 @@ const k = (e) => {
     const { response: r } = e.options;
     return r.html;
   }
-}, rt = (e) => Ge.sanitize(e), bn = (e) => {
+}, rt = (e) => Ge.sanitize(e), Cn = (e) => {
   const t = e == null ? void 0 : e.youtubeVideoId, r = e == null ? void 0 : e.youtubeAutoPlay, a = e == null ? void 0 : e.youtubeLoop, o = e == null ? void 0 : e.youtubeMute, s = e == null ? void 0 : e.youtubePlaysInline, u = e == null ? void 0 : e.youtubeRel, m = `https://www.youtube.com/embed/${t}`, g = {
     autoplay: `${+r}`,
     loop: `${+a}`,
@@ -1054,7 +1055,7 @@ const k = (e) => {
     rel: `${+u}`
   }, v = new URLSearchParams(g).toString();
   return `${m}?${v}`;
-}, Cn = (e) => {
+}, En = (e) => {
   var t, r, a, o;
   if (e.type === "HTML")
     return ne(rt(e.html));
@@ -1070,7 +1071,7 @@ const k = (e) => {
       }
     ) : /* @__PURE__ */ i.jsx(Je, { ...e });
   if (e.type === "URL")
-    return ((o = e.result) == null ? void 0 : o.processor) === "pinterest" ? /* @__PURE__ */ i.jsx("a", { "data-pin-build": "doBuild", "data-pin-do": "embedPin", href: e.url, children: e.url }) : /* @__PURE__ */ i.jsx(jn, { ...e });
+    return ((o = e.result) == null ? void 0 : o.processor) === "pinterest" ? /* @__PURE__ */ i.jsx("a", { "data-pin-build": "doBuild", "data-pin-do": "embedPin", href: e.url, children: e.url }) : /* @__PURE__ */ i.jsx(pn, { ...e });
 }, Je = (e) => {
   var t, r, a, o, s;
   return /* @__PURE__ */ i.jsx(
@@ -1082,13 +1083,13 @@ const k = (e) => {
       className: `${e.baseCssClass}__embeddable-iframe`,
       frameBorder: 0,
       height: ((r = e.youTubeProps) == null ? void 0 : r.layout) === "responsive" ? "100%" : (a = e.youTubeProps) == null ? void 0 : a.youtubeHeight,
-      src: bn(e.youTubeProps),
+      src: Cn(e.youTubeProps),
       title: "YouTube Video",
       type: "text/html",
       width: ((o = e.youTubeProps) == null ? void 0 : o.layout) === "responsive" ? "100%" : (s = e.youTubeProps) == null ? void 0 : s.youtubeWidth
     }
   );
-}, En = (e) => {
+}, jn = (e) => {
   var t, r, a, o, s, u, m, g, v, _, h;
   return (t = e == null ? void 0 : e.options) != null && t.response ? /* @__PURE__ */ i.jsx(
     "img",
@@ -1100,17 +1101,17 @@ const k = (e) => {
       width: (h = (_ = e == null ? void 0 : e.options) == null ? void 0 : _.response) == null ? void 0 : h.width
     }
   ) : null;
-}, jn = (e) => {
-  const t = _n(e.result);
+}, pn = (e) => {
+  const t = yn(e.result);
   if (t === "photo")
-    return /* @__PURE__ */ i.jsx(En, { ...e.result });
+    return /* @__PURE__ */ i.jsx(jn, { ...e.result });
   if (t === "link")
-    return /* @__PURE__ */ i.jsx("a", { href: yn(e.result), children: xn(e.result) });
+    return /* @__PURE__ */ i.jsx("a", { href: xn(e.result), children: bn(e.result) });
   if (t === "video")
     return ee(e.result) ? ne(ee(e.result)) : null;
   if (t === "rich")
     return ee(e.result) ? ne(rt(ee(e.result))) : null;
-}, Qn = (e) => {
+}, tr = (e) => {
   var s, u, m, g, v, _;
   const t = e.baseCssClass ?? "cmp-embed", r = { ...e, baseCssClass: t }, a = Kt(null);
   let o;
@@ -1118,7 +1119,7 @@ const k = (e) => {
     var h;
     if (a.current) {
       const f = (h = a.current.dataset) == null ? void 0 : h.provider;
-      f && gn(f);
+      f && vn(f);
     }
   }, []), ((s = e.result) == null ? void 0 : s.processor) === "oembed" && ((m = (u = e.result) == null ? void 0 : u.options) != null && m.provider) && (o = (v = (g = e.result) == null ? void 0 : g.options) == null ? void 0 : v.provider), ((_ = e.result) == null ? void 0 : _.processor) === "pinterest" && (o = "Pinterest"), nt(e) ? e.isInEditor && !e.hidePlaceHolder ? /* @__PURE__ */ i.jsx(N, { componentTitle: "Embed" }) : null : /* @__PURE__ */ i.jsx(
     "div",
@@ -1129,10 +1130,10 @@ const k = (e) => {
       id: e.id,
       ref: a,
       ...o ? { "data-provider": o } : {},
-      children: /* @__PURE__ */ i.jsx(Cn, { ...r })
+      children: /* @__PURE__ */ i.jsx(En, { ...r })
     }
   );
-}, at = (e) => !e || e.trim().length === 0, pn = (e) => {
+}, at = (e) => !e || e.trim().length === 0, Tn = (e) => {
   let t = "px";
   return /^(\d+|(\.\d+))(\.\d+)?%$/.test(e) && (t = ""), {
     "--asset-max-inline-size": `${e}${t}`
@@ -1157,7 +1158,7 @@ const k = (e) => {
     }
   ),
   e.displayPopupTitle && !!e.title && /* @__PURE__ */ i.jsx("meta", { content: e.title, itemProp: "caption" })
-] }), Tn = ({
+] }), Mn = ({
   alt: e,
   baseCssClass: t,
   isInEditor: r,
@@ -1215,8 +1216,8 @@ const k = (e) => {
       className: w(t, { "cq-dd-image": o }),
       id: a
     };
-    return v && (h.style = pn(v)), at(m) ? o && !r ? /* @__PURE__ */ i.jsx(N, { componentTitle: "Image" }) : null : /* @__PURE__ */ i.jsx("div", { ...h, ref: _, children: /* @__PURE__ */ i.jsx(
-      Tn,
+    return v && (h.style = Tn(v)), at(m) ? o && !r ? /* @__PURE__ */ i.jsx(N, { componentTitle: "Image" }) : null : /* @__PURE__ */ i.jsx("div", { ...h, ref: _, children: /* @__PURE__ */ i.jsx(
+      Mn,
       {
         alt: e,
         baseCssClass: t,
@@ -1234,7 +1235,7 @@ it.displayName = "CoreImage";
 const st = (e) => {
   var t;
   return e.items === null || ((t = e.items) == null ? void 0 : t.length) === 0;
-}, Mn = (e) => /* @__PURE__ */ i.jsxs(
+}, Rn = (e) => /* @__PURE__ */ i.jsxs(
   "li",
   {
     className: w(
@@ -1260,7 +1261,7 @@ const st = (e) => {
     ]
   }
 ), ye = (e) => /* @__PURE__ */ i.jsx(i.Fragment, { children: !!e.children && e.children.length > 0 && /* @__PURE__ */ i.jsx("ul", { className: `${e.baseCssClass}__group`, children: e.children.map((t, r) => /* @__PURE__ */ i.jsx(
-  Mn,
+  Rn,
   {
     ...t,
     baseCssClass: e.baseCssClass,
@@ -1268,7 +1269,7 @@ const st = (e) => {
     routed: typeof t.routed == "boolean" ? t.routed : e.routed
   },
   `${e.baseCssClass}__item-${r}`
-)) }) }), er = (e) => st(e) ? e.isInEditor && !e.hidePlaceHolder ? /* @__PURE__ */ i.jsx(N, { componentTitle: "Navigation" }) : null : /* @__PURE__ */ i.jsx(
+)) }) }), nr = (e) => st(e) ? e.isInEditor && !e.hidePlaceHolder ? /* @__PURE__ */ i.jsx(N, { componentTitle: "Navigation" }) : null : /* @__PURE__ */ i.jsx(
   "nav",
   {
     "aria-label": e.accessibilityLabel,
@@ -1297,7 +1298,7 @@ const st = (e) => {
 ), ot = (e) => {
   var t;
   return e.items === null || ((t = e.items) == null ? void 0 : t.length) === 0;
-}, Rn = (e) => e.level > 0 ? /* @__PURE__ */ i.jsx(
+}, $n = (e) => e.level > 0 ? /* @__PURE__ */ i.jsx(
   k,
   {
     className: `${e.baseCssClass}__item-link`,
@@ -1316,7 +1317,7 @@ const st = (e) => {
     lang: e.language,
     children: e.title
   }
-), $n = (e) => /* @__PURE__ */ i.jsxs(
+), Sn = (e) => /* @__PURE__ */ i.jsxs(
   "li",
   {
     className: w(
@@ -1329,12 +1330,12 @@ const st = (e) => {
       }
     ),
     children: [
-      /* @__PURE__ */ i.jsx(Rn, { ...e }),
+      /* @__PURE__ */ i.jsx($n, { ...e }),
       !!e.children && e.children.length > 0 && /* @__PURE__ */ i.jsx(ye, { ...e })
     ]
   }
-), Sn = (e) => /* @__PURE__ */ i.jsx(i.Fragment, { children: !!e.children && e.children.length > 0 && /* @__PURE__ */ i.jsx("ul", { className: `${e.baseCssClass}__group`, children: e.children.map((t, r) => /* @__PURE__ */ _e(
-  $n,
+), wn = (e) => /* @__PURE__ */ i.jsx(i.Fragment, { children: !!e.children && e.children.length > 0 && /* @__PURE__ */ i.jsx("ul", { className: `${e.baseCssClass}__group`, children: e.children.map((t, r) => /* @__PURE__ */ _e(
+  Sn,
   {
     ...t,
     baseCssClass: e.baseCssClass,
@@ -1342,7 +1343,7 @@ const st = (e) => {
     key: `${e.baseCssClass}__item-${r}`,
     routed: typeof t.routed == "boolean" ? t.routed : e.routed
   }
-)) }) }), tr = (e) => ot(e) ? e.isInEditor && !e.hidePlaceHolder ? /* @__PURE__ */ i.jsx(N, { componentTitle: "Language Navigation" }) : null : /* @__PURE__ */ i.jsx(
+)) }) }), rr = (e) => ot(e) ? e.isInEditor && !e.hidePlaceHolder ? /* @__PURE__ */ i.jsx(N, { componentTitle: "Language Navigation" }) : null : /* @__PURE__ */ i.jsx(
   "nav",
   {
     "aria-label": e.accessibilityLabel,
@@ -1352,7 +1353,7 @@ const st = (e) => {
     itemType: "http://schema.org/SiteNavigationElement",
     role: "navigation",
     children: /* @__PURE__ */ i.jsx(
-      Sn,
+      wn,
       {
         active: !1,
         children: e.items,
@@ -1697,8 +1698,8 @@ C.plugin = function(e) {
   var t = typeof e == "function" ? e : C.plugin[e];
   t && C.extend(J[t(j, re)] || {});
 };
-var wn = C;
-const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt = (e) => e.nested ? "-" : "__", Dn = (e) => {
+var Dn = C;
+const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt = (e) => e.nested ? "-" : "__", Nn = (e) => {
   var t;
   return /* @__PURE__ */ i.jsx(
     k,
@@ -1709,21 +1710,21 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
       children: e.text
     }
   );
-}, Nn = (e) => e.linkDisabled ? /* @__PURE__ */ i.jsx(i.Fragment, { children: e.text }) : /* @__PURE__ */ i.jsx(Dn, { ...e }), Pn = (e) => ut(e.text) ? e.isInEditor && !e.hidePlaceHolder ? /* @__PURE__ */ i.jsx(N, { componentTitle: "Title" }) : null : /* @__PURE__ */ i.jsx("div", { className: e.baseCssClass ?? "cmp-title", children: ae.createElement(
+}, Pn = (e) => e.linkDisabled ? /* @__PURE__ */ i.jsx(i.Fragment, { children: e.text }) : /* @__PURE__ */ i.jsx(Nn, { ...e }), Ln = (e) => ut(e.text) ? e.isInEditor && !e.hidePlaceHolder ? /* @__PURE__ */ i.jsx(N, { componentTitle: "Title" }) : null : /* @__PURE__ */ i.jsx("div", { className: e.baseCssClass ?? "cmp-title", children: ae.createElement(
   e.type ?? "h3",
   {
     className: `${e.baseCssClass ?? "cmp-title"}${dt(e)}text`
   },
-  /* @__PURE__ */ i.jsx(Nn, { ...e })
-) }), ft = (e) => !e.title && !e.imagePath && !e.description && e.actions.length === 0, Ln = (e) => /* @__PURE__ */ i.jsx("div", { className: `${e.baseCssClass}__image`, children: /* @__PURE__ */ i.jsx(
+  /* @__PURE__ */ i.jsx(Pn, { ...e })
+) }), ft = (e) => !e.title && !e.imagePath && !e.description && e.actions.length === 0, On = (e) => /* @__PURE__ */ i.jsx("div", { className: `${e.baseCssClass}__image`, children: /* @__PURE__ */ i.jsx(
   it,
   {
     alt: e.imageAlt,
     isInEditor: e.isInEditor,
     src: e.imagePath
   }
-) }), On = (e) => /* @__PURE__ */ i.jsx("div", { className: `${e.baseCssClass}__pretitle`, children: e.pretitle }), kn = (e) => /* @__PURE__ */ i.jsx(
-  Pn,
+) }), kn = (e) => /* @__PURE__ */ i.jsx("div", { className: `${e.baseCssClass}__pretitle`, children: e.pretitle }), An = (e) => /* @__PURE__ */ i.jsx(
+  Ln,
   {
     baseCssClass: `${e.baseCssClass}__title`,
     isInEditor: e.isInEditor,
@@ -1734,7 +1735,7 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
     text: e.title,
     type: e.titleType ?? "h2"
   }
-), An = (e) => {
+), Fn = (e) => {
   const t = e.description;
   return /* @__PURE__ */ i.jsx(
     "div",
@@ -1743,7 +1744,7 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
       dangerouslySetInnerHTML: { __html: t }
     }
   );
-}, Fn = (e) => /* @__PURE__ */ i.jsx("div", { className: `${e.baseCssClass}__action-container`, children: e.actions.map((t, r) => {
+}, In = (e) => /* @__PURE__ */ i.jsx("div", { className: `${e.baseCssClass}__action-container`, children: e.actions.map((t, r) => {
   var s;
   const a = e.componentMapping ?? qe;
   let o = et;
@@ -1760,7 +1761,7 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
     },
     `link-${r}`
   );
-}) }), In = (e) => {
+}) }), Yn = (e) => {
   const t = {
     ...e,
     baseCssClass: e.baseCssClass ?? "cmp-teaser"
@@ -1780,25 +1781,25 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
       id: e.id,
       children: /* @__PURE__ */ i.jsxs("section", { children: [
         /* @__PURE__ */ i.jsxs("div", { className: `${t.baseCssClass}__content`, children: [
-          e.pretitle && /* @__PURE__ */ i.jsx(On, { ...t }),
-          e.title && /* @__PURE__ */ i.jsx(kn, { ...t }),
-          e.description && /* @__PURE__ */ i.jsx(An, { ...t }),
-          e.actions.length > 0 && t.actionsEnabled && /* @__PURE__ */ i.jsx(Fn, { ...t })
+          e.pretitle && /* @__PURE__ */ i.jsx(kn, { ...t }),
+          e.title && /* @__PURE__ */ i.jsx(An, { ...t }),
+          e.description && /* @__PURE__ */ i.jsx(Fn, { ...t }),
+          e.actions.length > 0 && t.actionsEnabled && /* @__PURE__ */ i.jsx(In, { ...t })
         ] }),
-        e.imagePath && /* @__PURE__ */ i.jsx(Ln, { ...t })
+        e.imagePath && /* @__PURE__ */ i.jsx(On, { ...t })
       ] })
     }
   );
-}, mt = (e) => e === null || e.length === 0, Yn = (e) => {
-  const t = e.lastModifiedFormatted ? e.lastModifiedFormatted : e.lastModified && e.dateFormatString ? wn.format(
+}, mt = (e) => e === null || e.length === 0, Un = (e) => {
+  const t = e.lastModifiedFormatted ? e.lastModifiedFormatted : e.lastModified && e.dateFormatString ? Dn.format(
     new Date(e.lastModified),
     e.dateFormatString.toUpperCase()
   ) : "";
   return /* @__PURE__ */ i.jsx("span", { className: `${e.baseCssClass}__item-date`, children: t });
 }, ht = (e) => /* @__PURE__ */ i.jsxs(i.Fragment, { children: [
   /* @__PURE__ */ i.jsx("span", { className: `${e.baseCssClass}__item-title`, children: e.title }),
-  e.showModificationDate && /* @__PURE__ */ i.jsx(Yn, { ...e })
-] }), Un = (e) => {
+  e.showModificationDate && /* @__PURE__ */ i.jsx(Un, { ...e })
+] }), Hn = (e) => {
   var t;
   return /* @__PURE__ */ i.jsx(
     k,
@@ -1809,14 +1810,14 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
       children: /* @__PURE__ */ i.jsx(ht, { ...e })
     }
   );
-}, Hn = (e) => /* @__PURE__ */ i.jsx("span", { className: `${e.baseCssClass}__item-description`, children: e.description }), Bn = (e) => {
+}, Bn = (e) => /* @__PURE__ */ i.jsx("span", { className: `${e.baseCssClass}__item-description`, children: e.description }), Wn = (e) => {
   var t;
   return /* @__PURE__ */ i.jsx("li", { className: `${e.baseCssClass}__item`, children: /* @__PURE__ */ i.jsxs("article", { children: [
-    e.linkItems && !!((t = e.link) != null && t.url) && /* @__PURE__ */ i.jsx(Un, { ...e }),
+    e.linkItems && !!((t = e.link) != null && t.url) && /* @__PURE__ */ i.jsx(Hn, { ...e }),
     !e.linkItems && /* @__PURE__ */ i.jsx(ht, { ...e, index: e.index }),
-    e.showDescription && /* @__PURE__ */ i.jsx(Hn, { ...e })
+    e.showDescription && /* @__PURE__ */ i.jsx(Bn, { ...e })
   ] }) });
-}, nr = (e) => mt(e.items) ? e.isInEditor && !e.hidePlaceHolder ? /* @__PURE__ */ i.jsx(N, { componentTitle: "List" }) : null : e.displayItemAsTeaser ? /* @__PURE__ */ i.jsx(
+}, ar = (e) => mt(e.items) ? e.isInEditor && !e.hidePlaceHolder ? /* @__PURE__ */ i.jsx(N, { componentTitle: "List" }) : null : e.displayItemAsTeaser ? /* @__PURE__ */ i.jsx(
   "div",
   {
     className: w(
@@ -1825,7 +1826,7 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
     ),
     id: e.id,
     children: e.items.map((t, r) => /* @__PURE__ */ i.jsx(
-      In,
+      Yn,
       {
         ...t,
         actions: [],
@@ -1840,7 +1841,7 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
     ))
   }
 ) : /* @__PURE__ */ i.jsx("ul", { className: e.baseCssClass ?? "cmp-list", id: e.id, children: e.items.map((t, r) => /* @__PURE__ */ _e(
-  Bn,
+  Wn,
   {
     ...t,
     baseCssClass: e.baseCssClass ?? "cmp-list",
@@ -1852,21 +1853,21 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
     index: r,
     key: `cmp-list-${r}`
   }
-)) }), gt = (e) => e === null || (e == null ? void 0 : e.length) === 0, Wn = (e) => Ge.sanitize(e), rr = (e) => {
+)) }), gt = (e) => e === null || (e == null ? void 0 : e.length) === 0, Vn = (e) => Ge.sanitize(e), ir = (e) => {
   let { text: t } = e;
   if (e.richText) {
     const r = {
       replace(a) {
-        if (a instanceof tn && a.tagName === "a") {
+        if (a instanceof nn && a.tagName === "a") {
           const { attribs: o } = a, s = {
             ...o,
             className: o.class
           };
-          return delete s.class, /* @__PURE__ */ i.jsx(k, { ...s, children: nn(a.children, r) });
+          return delete s.class, /* @__PURE__ */ i.jsx(k, { ...s, children: rn(a.children, r) });
         }
       }
     };
-    t = ne(Wn(t), r);
+    t = ne(Vn(t), r);
   }
   return gt(e.text) ? e.isInEditor && !e.hidePlaceHolder ? /* @__PURE__ */ i.jsx(N, { componentTitle: "Text" }) : null : e.richText ? /* @__PURE__ */ i.jsx(
     "div",
@@ -1877,17 +1878,17 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
       children: t
     }
   ) : /* @__PURE__ */ i.jsx("div", { className: e.baseCssClass ?? "cmp-text", id: e.id, children: /* @__PURE__ */ i.jsx("p", { className: "cmp-text__paragraph", children: t }) });
-}, ar = {
+}, sr = {
   emptyLabel: "Breadcrumb",
   isEmpty(e) {
     return Ke(e.items);
   }
-}, ir = {
+}, or = {
   emptyLabel: "Button",
   isEmpty(e) {
     return Qe(e.text);
   }
-}, sr = {
+}, lr = {
   emptyLabel: "Download",
   isEmpty(e) {
     const { url: t, handleOnClick: r } = e;
@@ -1896,75 +1897,75 @@ const ut = (e) => e === null || (e == null ? void 0 : e.trim().length) === 0, dt
       url: t
     });
   }
-}, or = {
+}, cr = {
   emptyLabel: "Embed",
   isEmpty(e) {
     return nt(e);
   }
-}, lr = {
+}, ur = {
   emptyLabel: "Image",
   isEmpty({ src: e }) {
     return at(e);
   }
-}, cr = {
+}, dr = {
   emptyLabel: "Language Navigation",
   isEmpty(e) {
     return ot(e);
   }
-}, ur = {
+}, fr = {
   emptyLabel: "List",
   isEmpty(e) {
     return mt(e.items);
   }
-}, dr = {
+}, mr = {
   emptyLabel: "Navigation",
   isEmpty(e) {
     return st(e);
   }
-}, fr = {
+}, hr = {
   emptyLabel: "Teaser",
   isEmpty(e) {
     return ft(e);
   }
-}, mr = {
+}, gr = {
   emptyLabel: "Title",
   isEmpty(e) {
     return ut(e.text);
   }
-}, hr = {
+}, vr = {
   emptyLabel: "Text",
   isEmpty(e) {
     return gt(e.text);
   }
-}, gr = (e) => /* @__PURE__ */ i.jsx("div", { className: e.baseCssClass ?? "cmp-separator", id: e.id, children: /* @__PURE__ */ i.jsx(
+}, _r = (e) => /* @__PURE__ */ i.jsx("div", { className: e.baseCssClass ?? "cmp-separator", id: e.id, children: /* @__PURE__ */ i.jsx(
   "hr",
   {
     className: `${e.baseCssClass ?? "cmp-separator"}__horizontal-rule`
   }
 ) });
 export {
-  ar as BreadCrumbEditConfig,
-  ir as ButtonEditConfig,
-  Kn as CoreBreadCrumb,
+  sr as BreadCrumbEditConfig,
+  or as ButtonEditConfig,
+  Qn as CoreBreadCrumb,
   et as CoreButton,
-  Xn as CoreDownload,
-  Qn as CoreEmbed,
+  er as CoreDownload,
+  tr as CoreEmbed,
   it as CoreImage,
-  tr as CoreLanguageNavigation,
+  rr as CoreLanguageNavigation,
   k as CoreLink,
-  nr as CoreList,
-  er as CoreNavigation,
-  gr as CoreSeparator,
-  In as CoreTeaser,
-  rr as CoreText,
-  Pn as CoreTitle,
-  sr as DownloadEditConfig,
-  or as EmbedEditConfig,
-  lr as ImageEditConfig,
-  cr as LanguageNavigationEditConfig,
-  ur as ListEditConfig,
-  dr as NavigationEditConfig,
-  fr as TeaserEditConfig,
-  hr as TextEditConfig,
-  mr as TitleEditConfig
+  ar as CoreList,
+  nr as CoreNavigation,
+  _r as CoreSeparator,
+  Yn as CoreTeaser,
+  ir as CoreText,
+  Ln as CoreTitle,
+  lr as DownloadEditConfig,
+  cr as EmbedEditConfig,
+  ur as ImageEditConfig,
+  dr as LanguageNavigationEditConfig,
+  fr as ListEditConfig,
+  mr as NavigationEditConfig,
+  hr as TeaserEditConfig,
+  vr as TextEditConfig,
+  gr as TitleEditConfig
 };
