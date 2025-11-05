@@ -3,8 +3,7 @@
     "actions": {
       "source": {
         "useSortedAttributes": "on",
-        "useSortedKeys": "on",
-        "useSortedProperties": "on"
+        "useSortedKeys": "on"
       }
     }
   },
