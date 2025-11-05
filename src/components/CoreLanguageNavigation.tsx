@@ -1,11 +1,11 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
+import CoreLink from '@/components/CoreLink';
 import {
   NavigationGroup,
   NavigationItem,
   NavigationProps,
 } from '@/components/CoreNavigation';
-import CoreLink from '@/components/CoreLink';
 import EditorPlaceHolder from '@/components/EditorPlaceHolder';
 
 export interface LanguageNavigationItem extends NavigationItem {
@@ -118,7 +118,6 @@ const CoreLanguageNavigation = (
       id={props.id}
       itemScope
       itemType="http://schema.org/SiteNavigationElement"
-      role="navigation"
     >
       <LanguageNavigationGroup
         {...{

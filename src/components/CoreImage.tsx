@@ -1,6 +1,5 @@
-import React, { CSSProperties, forwardRef } from 'react';
-
 import classNames from 'classnames';
+import React, { CSSProperties, forwardRef } from 'react';
 import {
   CoreComponentModel,
   RoutedModel,

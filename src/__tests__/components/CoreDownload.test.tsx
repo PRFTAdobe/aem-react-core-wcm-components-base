@@ -1,9 +1,9 @@
-import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
 import { ComponentMapping } from '@adobe/aem-react-editable-components';
-import CoreDownload from '@/components/CoreDownload';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { MemoryRouter } from 'react-router-dom';
 import CoreButton from '@/components/CoreButton';
+import CoreDownload from '@/components/CoreDownload';
 
 describe('CoreDownload ->', () => {
   let ComponentMappingSpy: jest.SpyInstance;

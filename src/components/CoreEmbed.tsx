@@ -1,7 +1,7 @@
-import DOMPurify from 'dompurify';
-import React, { useEffect, useRef } from 'react';
-import parse from 'html-react-parser';
 import classNames from 'classnames';
+import DOMPurify from 'dompurify';
+import parse from 'html-react-parser';
+import React, { useEffect, useRef } from 'react';
 import {
   CoreComponentModel,
   RoutedModel,
@@ -256,6 +256,7 @@ const EmbedElement = (props: EmbedProps) => {
 
 const EmbedImage = (result: OEmbedResponse) => {
   return result?.options?.response ? (
+    // biome-ignore lint/a11y/useAltText: This is fine.
     <img
       {...{
         alt: result?.options?.response?.title,

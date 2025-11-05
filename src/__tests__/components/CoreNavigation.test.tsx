@@ -1,6 +1,6 @@
-import items from './CoreNavigation.json';
 import { render } from '@testing-library/react';
 import CoreNavigation from '@/components/CoreNavigation';
+import items from './CoreNavigation.json';
 
 describe('CoreNavigation ->', () => {
   it('Renders without crashing', () => {

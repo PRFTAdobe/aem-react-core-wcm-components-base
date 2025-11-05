@@ -1,11 +1,11 @@
 .cmp-download {
-  border: 1px solid #eee;
-  border-radius: 4px;
+  position: relative;
   display: inline-block;
-  overflow: hidden;
   padding-block: 16px;
   padding-inline: 16px;
-  position: relative;
+  overflow: hidden;
+  border: 1px solid #eee;
+  border-radius: 4px;
 }
 
 .cmp-download__title {
@@ -23,10 +23,10 @@
 }
 
 .cmp-download__description p {
-  margin-block: 0;
-  margin-inline: 0;
   padding-block: 0;
   padding-inline: 0;
+  margin-block: 0;
+  margin-inline: 0;
 }
 
 .cmp-download__properties {
@@ -35,13 +35,13 @@
 }
 
 .cmp-download__property {
-  background-color: #eee;
-  border-radius: 4px;
-  color: #000;
   display: inline-block;
-  margin-inline-end: 4px;
   padding-block: 4px;
   padding-inline: 8px;
+  margin-inline-end: 4px;
+  color: #000;
+  background-color: #eee;
+  border-radius: 4px;
 }
 
 .cmp-download__property-label {

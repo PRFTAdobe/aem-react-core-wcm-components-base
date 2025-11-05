@@ -1,9 +1,9 @@
 .cmp-teaser {
-  background-color: #f5f5f5;
-  color: #555;
   display: block;
   inline-size: 100%;
   overflow: hidden;
+  color: #555;
+  background-color: #f5f5f5;
 }
 
 .cmp-teaser--with-image > section,
@@ -16,19 +16,19 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-block-size: 160px;
   min-inline-size: 240px;
+  min-block-size: 160px;
   padding-block: 16px;
   padding-inline: 16px;
 }
 
 .cmp-teaser--with-image .cmp-teaser__content {
-  background-color: rgb(115 115 115 / 60%);
-  grid-column-start: 1;
-  grid-row-start: 1;
-  min-block-size: auto;
-  min-inline-size: auto;
   z-index: 1;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  min-inline-size: auto;
+  min-block-size: auto;
+  background-color: rgb(115 115 115 / 60%);
 }
 
 .cmp-teaser__description > p {
@@ -37,10 +37,10 @@
 }
 
 .cmp-teaser__title-text {
-  font-size: 20px;
-  line-height: 1.5;
   margin-block: 0;
   margin-inline: 0;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 .cmp-teaser--with-image .cmp-teaser__title-text {
@@ -60,14 +60,14 @@
 }
 
 .cmp-teaser__image {
-  grid-column-start: 1;
   grid-row-start: 1;
+  grid-column-start: 1;
 }
 
 .cmp-teaser__image .cmp-image__image {
-  block-size: 100%;
   display: block;
   inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
 }
 
@@ -89,9 +89,9 @@
 
 @media only screen and (min-width: 480px) {
   .cmp-teaser__content {
-    font-size: 14px;
     padding-block: 32px;
     padding-inline: 32px;
+    font-size: 14px;
   }
 
   .cmp-teaser__description > p {

@@ -1,11 +1,11 @@
-import React from 'react';
-import parse, { DOMNode, domToReact, Element } from 'html-react-parser';
 import DOMPurify from 'dompurify';
-import CoreLink from '@/components/CoreLink';
+import parse, { DOMNode, domToReact, Element } from 'html-react-parser';
+import React from 'react';
 import {
   CoreComponentModel,
   RoutedModel,
 } from '@/components/ComponentProperties';
+import CoreLink from '@/components/CoreLink';
 import EditorPlaceHolder from '@/components/EditorPlaceHolder';
 
 export interface TextProps extends CoreComponentModel, RoutedModel {
@@ -47,6 +47,7 @@ const CoreText = (props: TextProps): React.JSX.Element | null => {
     props.isInEditor && !props.hidePlaceHolder ? (
       <EditorPlaceHolder componentTitle="Text" />
     ) : null
+    // biome-ignore lint/style/noNestedTernary: This is fine
   ) : props.richText ? (
     <div
       className={props.baseCssClass ?? 'cmp-text'}

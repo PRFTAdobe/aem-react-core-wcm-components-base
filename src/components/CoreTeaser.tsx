@@ -1,14 +1,15 @@
-import React from 'react';
-import classNames from 'classnames';
+/** biome-ignore-all lint/suspicious/noArrayIndexKey: This is expected */
 import { ComponentMapping } from '@adobe/aem-react-editable-components';
+import classNames from 'classnames';
+import React from 'react';
 import {
   CoreComponentModel,
   RoutedModel,
 } from '@/components/ComponentProperties';
 import CoreButton from '@/components/CoreButton';
 import CoreImage from '@/components/CoreImage';
-import EditorPlaceHolder from '@/components/EditorPlaceHolder';
 import CoreTitle from '@/components/CoreTitle';
+import EditorPlaceHolder from '@/components/EditorPlaceHolder';
 import './CoreTeaser.css';
 
 interface TeaserAction extends RoutedModel {
@@ -81,6 +82,7 @@ const TeaserDescription = (props: TeaserProps) => {
   return (
     <div
       className={`${props.baseCssClass}__description`}
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: Needed to render HTML
       dangerouslySetInnerHTML={{ __html: text }}
     ></div>
   );

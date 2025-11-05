@@ -3,8 +3,8 @@
 }
 
 .cmp-embed__embeddable-wrapper > iframe {
-  inset: 0;
   position: absolute;
+  inset: 0;
 }
 
 .twitter-tweet iframe {

@@ -3,16 +3,16 @@ import {
   MappedComponentProperties,
 } from '@adobe/aem-react-editable-components';
 import {
-  BreadCrumbProps,
   isEmpty as BreadCrumbIsEmpty,
+  BreadCrumbProps,
 } from '@/components/CoreBreadCrumb';
-import { ButtonProps, isEmpty as ButtonIsEmpty } from '@/components/CoreButton';
+import { isEmpty as ButtonIsEmpty, ButtonProps } from '@/components/CoreButton';
 import {
-  DownloadProps,
   isEmpty as DownloadIsEmpty,
+  DownloadProps,
 } from '@/components/CoreDownload';
-import { EmbedProps, isEmpty as EmbedIsEmpty } from '@/components/CoreEmbed';
-import { ImageProps, isEmpty as ImageIsEmpty } from '@/components/CoreImage';
+import { isEmpty as EmbedIsEmpty, EmbedProps } from '@/components/CoreEmbed';
+import { isEmpty as ImageIsEmpty, ImageProps } from '@/components/CoreImage';
 import {
   isEmpty as LanguageNavigationIsEmpty,
   LanguageNavigationProps,
@@ -23,8 +23,8 @@ import {
   NavigationProps,
 } from '@/components/CoreNavigation';
 import { isEmpty as TeaserIsEmpty, TeaserProps } from '@/components/CoreTeaser';
-import { isEmpty as TitleIsEmpty, TitleProps } from '@/components/CoreTitle';
 import { isEmpty as TextIsEmpty, TextProps } from '@/components/CoreText';
+import { isEmpty as TitleIsEmpty, TitleProps } from '@/components/CoreTitle';
 
 export interface BreadcrumbComponentProperties
   extends BreadCrumbProps,

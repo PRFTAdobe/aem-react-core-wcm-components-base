@@ -1,21 +1,21 @@
 .cmp-button {
+  display: inline-block;
+  padding-block: 8px;
+  padding-inline: 16px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #7b7b7b;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
   background: none;
   border: 2px solid #7b7b7b;
   border-radius: 4px;
-  color: #7b7b7b;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 12px;
-  font-weight: bold;
-  padding-block: 8px;
-  padding-inline: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
 }
 
 .cmp-button:hover {
-  border-color: #222;
   color: #222;
+  border-color: #222;
 }
 
 .cmp-button__text {

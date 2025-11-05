@@ -1,7 +1,7 @@
-import { NavLink } from 'react-router-dom';
-import React from 'react';
-import { HasBaseCssClass } from '@/components/ComponentProperties';
 import { AuthoringUtils } from '@adobe/aem-spa-page-model-manager';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { HasBaseCssClass } from '@/components/ComponentProperties';
 
 interface LinkProps extends HasBaseCssClass {
   className?: string;
@@ -13,7 +13,7 @@ interface LinkProps extends HasBaseCssClass {
 }
 
 const CoreLink = (props: LinkProps): React.JSX.Element => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // biome-ignore lint/correctness/noUnusedVariables: This is expected
   const { className, href, isRouted, baseCssClass, valid, ...otherProps } =
     props;
   const computedClassName = (
@@ -35,7 +35,8 @@ const CoreLink = (props: LinkProps): React.JSX.Element => {
     return (
       <a
         className={computedClassName(baseCssClass, className, false).join(' ')}
-        href={'#'}
+        // biome-ignore lint/a11y/useValidAnchor: Pound sign is fine
+        href="#"
         {...otherProps}
       />
     );

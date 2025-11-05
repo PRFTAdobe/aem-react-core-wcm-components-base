@@ -59,7 +59,7 @@ describe('CoreText ->', () => {
     const richText =
       '<div class="dummy-component"><a class="dummy-link" href="/page3">Go to page 3</a></div>';
     const expectedHtml =
-      '<div class="cmp-text" data-rte-editelement="true" id="testId"><div class="dummy-component"><a class="cmp-link dummy-link" href="/page3">Go to page 3</a></div></div>';
+      '<div class="cmp-text" data-rte-editelement="true" id="testId"><div class="dummy-component"><a class="cmp-link dummy-link" href="/page3" data-discover="true">Go to page 3</a></div></div>';
     const { container } = render(
       <MemoryRouter>
         <CoreText

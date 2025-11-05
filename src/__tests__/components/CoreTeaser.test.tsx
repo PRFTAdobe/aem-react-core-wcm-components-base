@@ -1,8 +1,8 @@
+import { ComponentMapping } from '@adobe/aem-react-editable-components';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { ComponentMapping } from '@adobe/aem-react-editable-components';
-import CoreTeaser from '@/components/CoreTeaser';
 import CoreButton from '@/components/CoreButton';
+import CoreTeaser from '@/components/CoreTeaser';
 
 describe('CoreTeaser ->', () => {
   let ComponentMappingSpy: jest.SpyInstance;
@@ -94,7 +94,7 @@ describe('CoreTeaser ->', () => {
     //title
     const title = content!.querySelector('.cmp-teaser__title');
     expect(title).not.toBeNull();
-    const expectedHtml = `<div class="cmp-teaser__title"><${defaultProps.titleType} class="cmp-teaser__title-text"><a class="cmp-link cmp-teaser__title-link" href="${defaultProps.link.url}">${defaultProps.title}</a></${defaultProps.titleType}></div>`;
+    const expectedHtml = `<div class="cmp-teaser__title"><${defaultProps.titleType} class="cmp-teaser__title-text"><a class="cmp-link cmp-teaser__title-link" href="${defaultProps.link.url}" data-discover="true">${defaultProps.title}</a></${defaultProps.titleType}></div>`;
     expect(title!.outerHTML).toEqual(expectedHtml);
 
     //image

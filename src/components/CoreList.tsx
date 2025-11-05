@@ -1,12 +1,13 @@
+/** biome-ignore-all lint/suspicious/noArrayIndexKey: This is fine */
+import date from 'date-and-time';
+import React from 'react';
 import {
   CoreComponentModel,
   HasBaseCssClass,
   RoutedModel,
 } from '@/components/ComponentProperties';
 import CoreLink from '@/components/CoreLink';
-import React from 'react';
 import EditorPlaceHolder from '@/components/EditorPlaceHolder';
-import date from 'date-and-time';
 import './CoreList.css';
 import classNames from 'classnames';
 import CoreTeaser from '@/components/CoreTeaser';
@@ -44,7 +45,8 @@ export const isEmpty = (items: ListItemProps[]): boolean => {
 const ListItemModificationDate = (item: ListItemProps) => {
   const dateStringToDisplay = item.lastModifiedFormatted
     ? item.lastModifiedFormatted
-    : item.lastModified && item.dateFormatString
+    : // biome-ignore lint/style/noNestedTernary: This is fine
+      item.lastModified && item.dateFormatString
       ? date.format(
           new Date(item.lastModified),
           item.dateFormatString.toUpperCase(),
@@ -104,6 +106,7 @@ const CoreList = (props: ListProps): React.JSX.Element | null => {
     props.isInEditor && !props.hidePlaceHolder ? (
       <EditorPlaceHolder componentTitle="List" />
     ) : null
+    // biome-ignore lint/style/noNestedTernary: This is fine
   ) : props.displayItemAsTeaser ? (
     <div
       className={classNames(

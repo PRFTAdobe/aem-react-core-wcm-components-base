@@ -1,5 +1,6 @@
-import React from 'react';
+/** biome-ignore-all lint/suspicious/noArrayIndexKey: This is fine */
 import classNames from 'classnames';
+import React from 'react';
 import {
   CoreComponentModel,
   HasBaseCssClass,

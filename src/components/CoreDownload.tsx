@@ -1,13 +1,13 @@
-import React from 'react';
-import classNames from 'classnames';
 import { ComponentMapping } from '@adobe/aem-react-editable-components';
+import classNames from 'classnames';
+import React from 'react';
 import {
   CoreComponentModel,
   RoutedModel,
 } from '@/components/ComponentProperties';
-import EditorPlaceHolder from '@/components/EditorPlaceHolder';
 import CoreButton from '@/components/CoreButton';
 import CoreLink from '@/components/CoreLink';
+import EditorPlaceHolder from '@/components/EditorPlaceHolder';
 import './CoreDownload.css';
 
 export interface DownloadProps extends CoreComponentModel, RoutedModel {
@@ -79,7 +79,7 @@ const DownloadHeadingContent = ({
     handleOnClick && handleOnClick(event);
   };
 
-  return (url && url?.length !== 0) ?? handleOnClick ? (
+  return ((url && url?.length !== 0) ?? handleOnClick) ? (
     <CoreLink
       className={`${baseCssClass}__title-link`}
       href={getDownloadHref({ url })}
@@ -89,7 +89,7 @@ const DownloadHeadingContent = ({
       {title}
     </CoreLink>
   ) : (
-    <>{title}</>
+    title
   );
 };
 
@@ -161,6 +161,7 @@ const DownloadDescription = ({
   return (
     <div
       className={`${baseCssClass}__description`}
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: Needed to render HTML
       dangerouslySetInnerHTML={{ __html: html }}
     ></div>
   );

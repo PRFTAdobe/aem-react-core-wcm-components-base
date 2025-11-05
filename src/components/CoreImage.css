@@ -7,9 +7,9 @@
 }
 
 .cmp-image .cmp-asset {
-  block-size: auto;
   display: block;
   inline-size: 100%;
   max-inline-size: var(--asset-max-inline-size);
+  block-size: auto;
   object-fit: cover;
 }

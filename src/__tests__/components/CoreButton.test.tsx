@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
+import { MemoryRouter } from 'react-router-dom';
 import CoreButton from '@/components/CoreButton';
 
 describe('CoreButton ->', () => {

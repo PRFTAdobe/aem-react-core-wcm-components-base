@@ -93,7 +93,6 @@ const CoreNavigation = (props: NavigationProps): React.JSX.Element | null => {
       id={props.id}
       itemScope
       itemType="http://schema.org/SiteNavigationElement"
-      role="navigation"
     >
       <NavigationGroup
         {...{
