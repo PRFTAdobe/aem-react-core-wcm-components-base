@@ -1,11 +1,6 @@
-/** biome-ignore-all lint/suspicious/noArrayIndexKey: This is fine */
-import date from 'date-and-time';
+import { format } from 'date-and-time';
 import React from 'react';
-import {
-  CoreComponentModel,
-  HasBaseCssClass,
-  RoutedModel,
-} from '@/components/ComponentProperties';
+import { CoreComponentModel, HasBaseCssClass, RoutedModel } from '@/components/ComponentProperties';
 import CoreLink from '@/components/CoreLink';
 import EditorPlaceHolder from '@/components/EditorPlaceHolder';
 import './CoreList.css';
@@ -47,10 +42,7 @@ const ListItemModificationDate = (item: ListItemProps) => {
     ? item.lastModifiedFormatted
     : // biome-ignore lint/style/noNestedTernary: This is fine
       item.lastModified && item.dateFormatString
-      ? date.format(
-          new Date(item.lastModified),
-          item.dateFormatString.toUpperCase(),
-        )
+      ? format(new Date(item.lastModified), item.dateFormatString.toUpperCase())
       : '';
 
   return (
